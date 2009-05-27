@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:f="urn:flow3:fluid">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Welcome to FLOW3</title>
+<f:base />
+<link rel="stylesheet" type="text/css" href="Resources/Packages/Welcome/css/styles.css" />
+<script type="text/javascript" src="Resources/Packages/Welcome/js/mootools-1.2.2-core-yc.js"></script>
+<script type="text/javascript">
+window.addEvent('domready', function() {
+	$$('.tab').each(function(element, index) {
+		element.addClass(index == 0 ? 'tab-active' : 'tab-inactive');
+		element.getFirst('h2').addEvent('click', function() {
+			$$('.tab').removeClass('tab-active').addClass('tab-inactive');
+			element.addClass('tab-active').removeClass('tab-inactive');
+		});
+	});
+});
+</script>
+</head>
+<body>
+
+<div id="application-bar">
+<div class="logo">FLOW3</div> <h1 class="title">Welcome to the Flow!</h1>
+<div class="version">{version}</div>
+</div>
+
+<div id="window">
+	<div class="tabs">
+		<div class="tab">
+			<h2 class="title title-getting-started">Getting started</h2>
+			<div class="content">
+				<div class="main">
+					<p>Here's how to get into the Flow:</p>
+					<ol class="steps">
+						<li>
+							<h3>Create your first package</h3>
+							<p>Run <code>flow3 package create MyPackage</code> to create your first package</p>
+						</li>
+						<li>
+							<h3>Create a route and remove the Welcome package</h3>
+							<p>Routes are set up in <code>Configuration/Routes.yaml</code></p>
+							<p>Delete the Welcome package with <code>flow3 package delete Welcome</code></p>
+						</li>
+						<li>
+							<h3>Create a controller</h3>
+							<p>Run <code>flow3 generate controller MyPackage</code> to generate a default controller</p>
+						</li>
+						<li>
+							<h3>Read the tutorial</h3>
+							<p>Switch over to the <a href="#">tutorial</a> to get the most out of FLOW3.</p>
+						</li>
+						<li>
+							<h3>Read the tutorial</h3>
+							<p>Switch over to the <a href="#">tutorial</a> to get the most out of FLOW3.</p>
+						</li>
+						<li>
+							<h3>Read the tutorial</h3>
+							<p>Switch over to the <a href="#">tutorial</a> to get the most out of FLOW3.</p>
+						</li>
+						<li>
+							<h3>Read the tutorial</h3>
+							<p>Switch over to the <a href="#">tutorial</a> to get the most out of FLOW3.</p>
+						</li>
+						
+					</ol>
+				</div>
+				<h2 class="invisible">More information</h2>
+				<div class="sidebar">
+					<h3>Join the community</h3>
+					<ul>
+						<li><a href="#">FLOW3</a></li>
+					</ul>
+					<h3>Browse the documentation</h3>
+					<ul>
+						<li><a href="#">FLOW3 Reference</a></li>
+						<li><a href="#">FLOW3 API</a></li>
+						<li><a href="#">Documentation browser</a></li>
+						<li><a href="#">Coding guidelines</a></li>						
+					</ul>
+					<h3>Get involved</h3>
+				</div>
+			</div>
+		</div>
+	
+		<div class="tab">
+			<h2 class="title title-tutorial">Tutorial</h2>
+			<div class="content">
+				<div class="main">
+					<p>Here's the tutorial:</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab">
+			<h2 class="title title-about">About</h2>
+			<div class="content">
+				<div class="main">
+					<h3>About FLOW3</h3>
+					<p>Some words about FLOW3.</p>
+					<p>License, Contributors, etc.</p>
+					<h3>Packages</h3>
+					<ul class="packages">
+					<f:for each="{activePackages}" as="package">
+						<li class="package">
+							<h4>{package.packageMetaData.title} <small><span class="package-key">{package.packageKey}</span> <span class="package-version">{package.packageMetaData.version}</span></small></h4>
+							<p>{package.packageMetaData.description}</p>
+						</li>
+					</f:for>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
