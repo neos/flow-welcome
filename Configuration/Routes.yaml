@@ -5,9 +5,19 @@
 # $Id: Routes.yaml 2179 2009-04-24 12:28:32Z k-fish $
 
 --
-  uriPattern: ''
+  name: 'Standard route'
+  uriPattern: 'flow3/welcome'
   defaults:
     @package:    'Welcome'
     @controller: 'Standard'
     @action:     'index'
+    @format:     'html'
+
+--
+  name: 'Redirect'
+  uriPattern: ''
+  defaults:
+    @package:    'Welcome'
+    @controller: 'Standard'
+    @action:     'redirect'
     @format:     'html'

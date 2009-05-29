@@ -36,6 +36,8 @@ namespace F3\Welcome\Controller;
  * @version $Id: StandardController.php 2279 2009-05-19 21:16:46Z k-fish $
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  */
+use F3\FLOW3\MVC\Controller;
+
 class StandardController extends \F3\FLOW3\MVC\Controller\ActionController {
 
 	/**
@@ -43,7 +45,7 @@ class StandardController extends \F3\FLOW3\MVC\Controller\ActionController {
 	 * @inject
 	 */
 	protected $packageManager;
-	
+
 	/**
 	 * Index action
 	 *
@@ -51,12 +53,23 @@ class StandardController extends \F3\FLOW3\MVC\Controller\ActionController {
 	 * @author Christopher Hlubek <hlubek@networkteam.com>
 	 */
 	public function indexAction() {
+		$this->view->assign('baseURI', $this->request->getBaseURI());
+		$this->view->assign('flow3CommandLinePath', realpath(FLOW3_PATH_PUBLIC . '../'));
+
 		$flow3Package = $this->packageManager->getPackage('FLOW3');
 		$version = $flow3Package->getPackageMetaData()->getVersion();
 		$this->view->assign('version', $version);
-		
+
 		$activePackages = $this->packageManager->getActivePackages();
 		$this->view->assign('activePackages', $activePackages);
+	}
+
+	/**
+	 * @return void
+	 * @autho Robert Lemke <robert@typo3.org>
+	 */
+	public function redirectAction() {
+		$this->redirect('index');
 	}
 }
 ?>

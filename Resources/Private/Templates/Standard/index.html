@@ -24,7 +24,7 @@ window.addEvent('domready', function() {
 <body>
 
 <div id="application-bar">
-<div class="logo">FLOW3</div> <h1 class="title">Welcome to the Flow!</h1>
+<div class="logo">FLOW3</div> <h1 class="title">Welcome</h1>
 <div class="version">{version}</div>
 </div>
 
@@ -34,24 +34,27 @@ window.addEvent('domready', function() {
 			<h2 class="title title-getting-started">Getting started</h2>
 			<div class="content">
 				<div class="main">
-					<p>Here's how to get into the Flow:</p>
+					<p>Here's how to get into the flow:</p>
 					<ol class="steps">
 						<li>
 							<h3>Create your first package</h3>
-							<p>Run <code>flow3 package create MyPackage</code> to create your first package</p>
-						</li>
-						<li>
-							<h3>Create a route and remove the Welcome package</h3>
-							<p>Routes are set up in <code>Configuration/Routes.yaml</code></p>
-							<p>Delete the Welcome package with <code>flow3 package delete Welcome</code></p>
+							<p>Go to <code>{flow3CommandLinePath}</code><br />and run <code>./flow3 package create MyPackage</code> to create a package</p>
 						</li>
 						<li>
 							<h3>Create a controller</h3>
-							<p>Run <code>flow3 generate controller MyPackage</code> to generate a default controller</p>
+							<p>Run <code>./flow3 kickstart controller --package MyPackage</code> to generate a standard controller</p>
+						</li>
+						<li>
+							<h3>Remove the Welcome package</h3>
+							<p>Delete the Welcome package with <code>./flow3 package delete Welcome</code></p>
+						</li>
+						<li>
+							<h3>Test your controller</h3>
+							<p>Run <a href="{baseURI}MyPackage">{baseURI}MyPackage</a> in your webbrowser</p>
 						</li>
 						<li>
 							<h3>Read the tutorial</h3>
-							<p>Switch over to the <a href="#">tutorial</a> to get the most out of FLOW3.</p>
+							<p>Switch over to the <a href="http://flow3.typo3.org/documentation/tutorials">tutorial</a> to get the most out of FLOW3.</p>
 						</li>
 					</ol>
 				</div>
@@ -59,14 +62,14 @@ window.addEvent('domready', function() {
 				<div class="sidebar">
 					<h3>Join the community</h3>
 					<ul>
-						<li><a href="#">FLOW3</a></li>
+						<li><a href="http://flow3.typo3.org">FLOW3</a></li>
 					</ul>
 					<h3>Browse the documentation</h3>
 					<ul>
-						<li><a href="#">FLOW3 Reference</a></li>
-						<li><a href="#">FLOW3 API</a></li>
-						<li><a href="#">Documentation browser</a></li>
-						<li><a href="#">Coding guidelines</a></li>						
+						<li><a href="http://flow3.typo3.org/documentation/reference/">Manuals (online)</a></li>
+						<li><f:link.action package="DocumentationBrowser">Manuals (local)</f:link.action></li>
+						<li><a href="http://flow3.typo3.org/documentation/api/">FLOW3 API (online)</a></li>
+						<li><a href="http://flow3.typo3.org/documentation/coding-guidelines/">Coding guidelines</a></li>
 					</ul>
 					<h3>Get involved</h3>
 				</div>
