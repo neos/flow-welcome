@@ -36,7 +36,6 @@ namespace F3\Welcome\Controller;
  * @version $Id: StandardController.php 2279 2009-05-19 21:16:46Z k-fish $
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  */
-use F3\FLOW3\MVC\Controller;
 
 class StandardController extends \F3\FLOW3\MVC\Controller\ActionController {
 
