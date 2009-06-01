@@ -81,11 +81,6 @@ h1, h2, h3, h4 {
 	width: 800px;
 	margin: 10% auto 0 auto;
 }
-#window .tabs .tab-inactive {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-}
 #window .tabs .tab-inactive .content {
 	display: none;
 }
