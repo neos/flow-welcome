@@ -47,10 +47,6 @@ window.addEvent('domready', function() {
 										<h3>Create a controller</h3>
 										<p>Run <code>php index.php Kickstart Kickstart controller --package-key MyPackage</code> to generate a standard controller</p>
 									</li>
-									<li>
-										<h3>Remove the Welcome package</h3>
-										<p>Delete the Welcome package with <code>php index.php FLOW3 Package Manager delete --package-key Welcome</code></p>
-									</li>
 								</f:then>
 								<f:else>
 									<li>
@@ -60,10 +56,6 @@ window.addEvent('domready', function() {
 									<li>
 										<h3>Create a controller</h3>
 										<p>Run <code>./flow3 kickstart controller MyPackage</code> to generate a standard controller</p>
-									</li>
-									<li>
-										<h3>Remove the Welcome package</h3>
-										<p>Delete the Welcome package with <code>./flow3 package delete Welcome</code></p>
 									</li>
 								</f:else>
 							</f:if>
@@ -75,6 +67,20 @@ window.addEvent('domready', function() {
 								<h3>Read the tutorial</h3>
 								<p>Switch over to the <a href="http://flow3.typo3.org/documentation/tutorials" target="flow3">tutorial</a> to get the most out of FLOW3.</p>
 							</li>
+							<f:if condition="{isWindows}">
+								<f:then>
+									<li>
+										<h3>Remove the Welcome package (optional)</h3>
+										<p>Delete the Welcome package with <code>php index.php FLOW3 Package Manager delete --package-key Welcome</code></p>
+									</li>
+								</f:then>
+								<f:else>
+									<li>
+										<h3>Remove the Welcome package (optional)</h3>
+										<p>Delete the Welcome package with <code>./flow3 package delete Welcome</code></p>
+									</li>
+								</f:else>
+							</f:if>
 						</ol>
 					</div>
 				</div>
