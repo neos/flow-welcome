@@ -8,24 +8,32 @@ body {
 	color: #515151;
    	line-height: 17px;
 	background-color: #515151;
+	background-image: url('../images/application-bar-bg.gif');
+	background-position: top left;
+	background-repeat: repeat-x;
 	margin: 0;
 	padding: 0;
 	width: 100%;
 	height: 100%;
 }
-a {
+a,
+a:visited,
+a:link {
 	color: #700016;
-	text-decoration:none;
+	text-decoration: none;
 }
-a:hover {
+a:hover,
+a:active,
+a:focus {
 	color: #E56508;
-	text-decoration:underline;
+	text-decoration: underline;
 }
 a.active {
 	color: #99011E;
-	text-decoration:none;
+	text-decoration: none;
 }
-ul, ul li {
+ul,
+ul li {
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -42,10 +50,6 @@ h1, h2, h3, h4 {
 #application-bar {
 	position: relative;
 	display: block;
-	background-color: #515151;
-	background-image: url('../images/application-bar-bg.gif');
-	background-position: top left;
-	background-repeat: repeat-x;
 	width: 100%;
 	height: 6%;
 	color: #a0a0a0;
@@ -97,14 +101,19 @@ h1, h2, h3, h4 {
 	padding: 50px 20px 0 20px;
 	border: 1px solid #fff;
 }
-#window .tabs .tab-active .title-getting-started, #window .tabs .tab-inactive .title-getting-started {
+#window .tabs .tab-active .title-getting-started,
+#window .tabs .tab-inactive .title-getting-started,
+#window .tabs .tab-active .title-tutorial,
+#window .tabs .tab-inactive .title-tutorial,
+#window .tabs .tab-active .title-about,
+#window .tabs .tab-inactive .title-about {
 	position: absolute;
 	z-index: 100;
 	top: -4px;
 	left: 0px;
 	width: 210px;
 	height: 36px;
-	text-indent: -999px;
+	text-indent: -9999px;
 }
 #window .tabs .tab-active .title-getting-started {
 	background: url('../images/tabs-title-getting-started-active.png') no-repeat;
@@ -112,14 +121,11 @@ h1, h2, h3, h4 {
 #window .tabs .tab-inactive .title-getting-started {
 	background: url('../images/tabs-title-getting-started.png') no-repeat;
 }
-#window .tabs .tab-active .title-tutorial, #window .tabs .tab-inactive .title-tutorial {
-	position: absolute;
+#window .tabs .tab-active .title-tutorial,
+#window .tabs .tab-inactive .title-tutorial {
 	z-index: 90;
-	top: -4px;
 	left: 150px;
 	width: 250px;
-	height: 36px;
-	text-indent: -999px;
 }
 #window .tabs .tab-active .title-tutorial {
 	background: url('../images/tabs-title-tutorial-active.png') no-repeat;
@@ -127,14 +133,11 @@ h1, h2, h3, h4 {
 #window .tabs .tab-inactive .title-tutorial {
 	background: url('../images/tabs-title-tutorial.png') no-repeat;
 }
-#window .tabs .tab-active .title-about, #window .tabs .tab-inactive .title-about {
-	position: absolute;
+#window .tabs .tab-active .title-about,
+#window .tabs .tab-inactive .title-about {
 	z-index: 80;
-	top: -4px;
 	left: 340px;
 	width: 250px;
-	height: 36px;
-	text-indent: -999px;
 }
 #window .tabs .tab-active .title-about {
 	background: url('../images/tabs-title-about-active.png') no-repeat;
@@ -148,9 +151,12 @@ h1, h2, h3, h4 {
 	width: 576px;
 	padding: 10px 0 0 0;
 }
+#window .tabs .tab-active .content .main .spacer {
+	margin: 0 10px;
+}
 #window .tabs .tab-active .content .main p {
 	margin: 0;
-	padding: 0 0 10px 10px;
+	padding: 0 0 10px 0;
 }
 #window .tabs .tab-active .content .sidebar {
 	position: absolute;
@@ -167,22 +173,28 @@ h1, h2, h3, h4 {
 	background: #f7f7f7;
 	padding: 2px;
 }
-#window .tabs .content .main ol.steps li h3 {
-	font-size: 18px;
-	margin: 0 0 10px 0;
-}
 #window .tabs .content .main ol.steps {
-	padding: 10px 0 0 50px;
+	padding: 0 0 0 40px;
+	-webkit-padding-start: 53px;
+	margin: 10px 0;
 }
 #window .tabs .content .main ol.steps li {
 	color: #cbcbcb;
 	font-size: 35px;
 	list-style-type: decimal;
 	padding: 0 0 10px 0;
+	margin: 0;
 }
-#window .tabs .content .main ol.steps li * {
+#window .tabs .content .main ol.steps li p {
 	color: #515151;
 	font-size: 14px;
+	-webkit-margin-start: -15px;
+}
+#window .tabs .content .main ol.steps li h3 {
+	color: #515151;
+	font-size: 18px;
+	margin: 0 0 10px 0;
+	-webkit-margin-start: -15px;
 }
 #window .tabs .content .sidebar h3 {
 	margin: 0 0 10px 0;
@@ -194,15 +206,18 @@ h1, h2, h3, h4 {
 	margin: 0 0 5px 0;
 }
 #window .tabs .content .main h3 {
-	margin: 0 0 10px 10px;
+	margin: 10px 0 10px 0;
 	font-size: 18px;
 }
+#window .tabs .content .main h3.first {
+	margin: 0px 0 10px 0;
+}
 #window .tabs .content .main ul.packages {
-	padding: 5px 0 0 10px;
+	padding: 0 0 10px 10px;
 }
 #window .tabs .content .main ul.packages li.package {
-	border-bottom: 1px dotted #efefef;
-	padding: 10px 0 0 0;
+	border-bottom: 1px dotted #ccc;
+	padding: 15px 0 0 0;
 }
 #window .tabs .content .main ul.packages h4 {
 	padding: 0 0 5px 0;

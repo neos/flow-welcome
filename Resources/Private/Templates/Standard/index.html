@@ -34,47 +34,49 @@ window.addEvent('domready', function() {
 			<h2 class="title title-getting-started">Getting started</h2>
 			<div class="content">
 				<div class="main">
-					<p>Here's how to get into the flow:</p>
-					<ol class="steps">
-						<f:if condition="{isWindows}">
-							<f:then>
-								<li>
-									<h3>Create your first package</h3>
-									<p>Go to <code>{flow3CommandLinePath}\Public</code><br />and run <code>php index.php FLOW3 Package Manager create --package-key MyPackage</code> to create a package</p>
-								</li>
-								<li>
-									<h3>Create a controller</h3>
-									<p>Run <code>php index.php Kickstart Kickstart controller --package-key MyPackage</code> to generate a standard controller</p>
-								</li>
-								<li>
-									<h3>Remove the Welcome package</h3>
-									<p>Delete the Welcome package with <code>php index.php FLOW3 Package Manager delete --package-key Welcome</code></p>
-								</li>
-							</f:then>
-							<f:else>
-								<li>
-									<h3>Create your first package</h3>
-									<p>Go to <code>{flow3CommandLinePath}</code><br />and run <code>./flow3 package create MyPackage</code> to create a package</p>
-								</li>
-								<li>
-									<h3>Create a controller</h3>
-									<p>Run <code>./flow3 kickstart controller MyPackage</code> to generate a standard controller</p>
-								</li>
-								<li>
-									<h3>Remove the Welcome package</h3>
-									<p>Delete the Welcome package with <code>./flow3 package delete Welcome</code></p>
-								</li>
-							</f:else>
-						</f:if>
-						<li>
-							<h3>Test your controller</h3>
-							<p>Run <a href="{baseURI}MyPackage">{baseURI}MyPackage</a> in your webbrowser</p>
-						</li>
-						<li>
-							<h3>Read the tutorial</h3>
-							<p>Switch over to the <a href="http://flow3.typo3.org/documentation/tutorials" target="flow3">tutorial</a> to get the most out of FLOW3.</p>
-						</li>
-					</ol>
+					<div class="spacer">
+						<p>Here's how to get into the flow:</p>
+						<ol class="steps">
+							<f:if condition="{isWindows}">
+								<f:then>
+									<li>
+										<h3>Create your first package</h3>
+										<p>Go to <code>{flow3CommandLinePath}\Public</code><br />and run <code>php index.php FLOW3 Package Manager create --package-key MyPackage</code> to create a package</p>
+									</li>
+									<li>
+										<h3>Create a controller</h3>
+										<p>Run <code>php index.php Kickstart Kickstart controller --package-key MyPackage</code> to generate a standard controller</p>
+									</li>
+									<li>
+										<h3>Remove the Welcome package</h3>
+										<p>Delete the Welcome package with <code>php index.php FLOW3 Package Manager delete --package-key Welcome</code></p>
+									</li>
+								</f:then>
+								<f:else>
+									<li>
+										<h3>Create your first package</h3>
+										<p>Go to <code>{flow3CommandLinePath}</code><br />and run <code>./flow3 package create MyPackage</code> to create a package</p>
+									</li>
+									<li>
+										<h3>Create a controller</h3>
+										<p>Run <code>./flow3 kickstart controller MyPackage</code> to generate a standard controller</p>
+									</li>
+									<li>
+										<h3>Remove the Welcome package</h3>
+										<p>Delete the Welcome package with <code>./flow3 package delete Welcome</code></p>
+									</li>
+								</f:else>
+							</f:if>
+							<li>
+								<h3>Test your controller</h3>
+								<p>Run <a href="{baseURI}MyPackage">{baseURI}MyPackage</a> in your webbrowser</p>
+							</li>
+							<li>
+								<h3>Read the tutorial</h3>
+								<p>Switch over to the <a href="http://flow3.typo3.org/documentation/tutorials" target="flow3">tutorial</a> to get the most out of FLOW3.</p>
+							</li>
+						</ol>
+					</div>
 				</div>
 				<h2 class="invisible">More information</h2>
 				<div class="sidebar">
@@ -111,32 +113,34 @@ window.addEvent('domready', function() {
 			<h2 class="title title-about">About</h2>
 			<div class="content">
 				<div class="main">
-					<h3>About FLOW3</h3>
-					<p>﻿FLOW3 is an offspring from the development of the upcoming version 5 of <a href="http://typo3.org">TYPO3</a> and
-can be used independently from TYPO3 as an application framework. It is licensed under the terms of the GNU Lesser General 
-					Public License version 3 or later.</p>
-					<h3>Credits</h3>
-					<p>Many people have contributed to FLOW3 with ideas, design, testing, money, code and espresso. A big thank goes to the 
-					TYPO3 community and the members of the TYPO3 Assocation who made the development of FLOW3 possible at all.</p>
-					<p>The main part of FLOW3 was designed and developed by Robert Lemke. Major contributions to FLOW3 were made and most of the persistence
-					framework have been developed by Karsten Dambekalns, who co-leads the FLOW3 project. Andreas Förthner designed and developed the 
-					Security Framework while Bastian Waidelich created the initial implementation of FLOW3's routing mechanism. Sebastian Kurf&uuml;rst
-					and Bastian Waidelich designed and implemented the Fluid templating engine.</p>
-					<p>Further important contributions were made by the FLOW3 team, including Daniel Br&uuml;n, Tim Eilers, Thomas Hempel, 
-					Christopher Hlubek, Christian Jul Jensen, Tobias Liebig, Irene H&ouml;ppner and Nils Jeisecke.</p>
-					<p>The initial design of the AOP framework and the IoC container were inspired by the viFramework developed by Florian Grandel who
-					also pointed Robert to the Spring Framework which was a great source for inspiration. Further frameworks and projects which influenced
-					the design of FLOW3 are AspectJ, NanoContainer, Ruby on Rails, Symfony, QT and surely more.</p>
-					<p>Many more contributions have been made by various members of the TYPO3 and PHP community - thanks to all of you!</p>
-					<h3>Installed Packages</h3>
-					<ul class="packages">
-					<f:for each="{activePackages}" as="package">
-						<li class="package">
-							<h4>{package.packageMetaData.title} <small><span class="package-key">{package.packageKey}</span> <span class="package-version">{package.packageMetaData.version}</span></small></h4>
-							<p>{package.packageMetaData.description}</p>
-						</li>
-					</f:for>
-					</ul>
+					<div class="spacer">
+						<h3 class="first">About FLOW3</h3>
+						<p>﻿FLOW3 is an offspring from the development of the upcoming version 5 of <a href="http://typo3.org">TYPO3</a> and
+						can be used independently from TYPO3 as an application framework. It is licensed under the terms of the GNU Lesser General 
+						Public License version 3 or later.</p>
+						<h3>Credits</h3>
+						<p>Many people have contributed to FLOW3 with ideas, design, testing, money, code and espresso. A big thank goes to the 
+						TYPO3 community and the members of the TYPO3 Assocation who made the development of FLOW3 possible at all.</p>
+						<p>The main part of FLOW3 was designed and developed by Robert Lemke. Major contributions to FLOW3 were made and most of the persistence
+						framework have been developed by Karsten Dambekalns, who co-leads the FLOW3 project. Andreas Förthner designed and developed the 
+						Security Framework while Bastian Waidelich created the initial implementation of FLOW3's routing mechanism. Sebastian Kurf&uuml;rst
+						and Bastian Waidelich designed and implemented the Fluid templating engine.</p>
+						<p>Further important contributions were made by the FLOW3 team, including Daniel Br&uuml;n, Tim Eilers, Thomas Hempel, 
+						Christopher Hlubek, Christian Jul Jensen, Tobias Liebig, Irene H&ouml;ppner and Nils Jeisecke.</p>
+						<p>The initial design of the AOP framework and the IoC container were inspired by the viFramework developed by Florian Grandel who
+						also pointed Robert to the Spring Framework which was a great source for inspiration. Further frameworks and projects which influenced
+						the design of FLOW3 are AspectJ, NanoContainer, Ruby on Rails, Symfony, QT and surely more.</p>
+						<p>Many more contributions have been made by various members of the TYPO3 and PHP community - thanks to all of you!</p>
+						<h3>Installed Packages</h3>
+						<ul class="packages">
+						<f:for each="{activePackages}" as="package">
+							<li class="package">
+								<h4>{package.packageMetaData.title} <small><span class="package-key">{package.packageKey}</span> <span class="package-version">{package.packageMetaData.version}</span></small></h4>
+								<p>{package.packageMetaData.description}</p>
+							</li>
+						</f:for>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
