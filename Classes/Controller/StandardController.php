@@ -49,11 +49,13 @@ class StandardController extends \F3\FLOW3\MVC\Controller\ActionController {
 	 *
 	 * @return void
 	 * @author Christopher Hlubek <hlubek@networkteam.com>
+	 * @author Robert Lemke <robert@typo3.org>
+	 * @author Bastian Waidelich <bastian@typo3.org>
 	 */
 	public function indexAction() {
 		$this->view->assign('baseURI', $this->request->getBaseURI());
 		$this->view->assign('flow3CommandLinePath', realpath(FLOW3_PATH_PUBLIC . '../'));
-		$this->view->assign('isWindows', (PHP_OS === 'WIN'));
+		$this->view->assign('isWindows', $this->isWindows());
 
 		$flow3Package = $this->packageManager->getPackage('FLOW3');
 		$version = $flow3Package->getPackageMetaData()->getVersion();
@@ -61,6 +63,17 @@ class StandardController extends \F3\FLOW3\MVC\Controller\ActionController {
 
 		$activePackages = $this->packageManager->getActivePackages();
 		$this->view->assign('activePackages', $activePackages);
+	}
+
+	/**
+	 * Determines whether FLOW3 runs on a Windows machine.
+	 * @todo this might be a useful static method for F3/FLOW3/Utility/Environment
+	 *
+	 * @return boolean TRUE if current OS is Windows based, otherwise FALSE.
+	 * @author Bastian Waidelich <bastian@typo3.org>
+	 */
+	protected function isWindows() {
+		return (strtolower(substr(PHP_OS, 0, 3)) === 'win');
 	}
 
 	/**
