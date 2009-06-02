@@ -25,7 +25,7 @@ namespace F3\Welcome\Controller;
 /**
  * @package Welcome
  * @subpackage Controller
- * @version $Id: StandardController.php 2279 2009-05-19 21:16:46Z k-fish $
+ * @version $Id$
  */
 
 /**
@@ -33,7 +33,7 @@ namespace F3\Welcome\Controller;
  *
  * @package Welcome
  * @subpackage Controller
- * @version $Id: StandardController.php 2279 2009-05-19 21:16:46Z k-fish $
+ * @version $Id$
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
 class StandardController extends \F3\FLOW3\MVC\Controller\ActionController {
