@@ -40,22 +40,14 @@ window.addEvent('domready', function() {
 							<f:if condition="{isWindows}">
 								<f:then>
 									<li>
-										<h3>Create your first package</h3>
-										<p>Go to <code>{flow3CommandLinePath}\Public</code><br />and run <code>php index.php FLOW3 Package Manager create --package-key MyPackage</code> to create a package</p>
-									</li>
-									<li>
-										<h3>Create a controller</h3>
-										<p>Run <code>php index.php Kickstart Kickstart controller --package-key MyPackage</code> to generate a standard controller</p>
+										<h3>Kickstart your first package</h3>
+										<p>Go to <code>{flow3CommandLinePath}\Public</code><br />and run <code>php index.php Kickstart Kickstart package --package-key MyPackage</code> to create a package with a standard controller</p>
 									</li>
 								</f:then>
 								<f:else>
 									<li>
-										<h3>Create your first package</h3>
-										<p>Go to <code>{flow3CommandLinePath}</code><br />and run <code>./flow3 package create MyPackage</code> to create a package</p>
-									</li>
-									<li>
-										<h3>Create a controller</h3>
-										<p>Run <code>./flow3 kickstart controller MyPackage</code> to generate a standard controller</p>
+										<h3>Kickstart your first package</h3>
+										<p>Go to <code>{flow3CommandLinePath}</code><br />and run <code>./flow3 kickstart package MyPackage</code> to create a package with a standard controller</p>
 									</li>
 								</f:else>
 							</f:if>
@@ -71,13 +63,13 @@ window.addEvent('domready', function() {
 								<f:then>
 									<li>
 										<h3>Remove the Welcome package (optional)</h3>
-										<p>Delete the Welcome package with <code>php index.php FLOW3 Package Manager delete --package-key Welcome</code></p>
+										<p>Deactivate the Welcome package with<br /><code>php index.php FLOW3 Package Manager deactivate --package-key Welcome</code></p>
 									</li>
 								</f:then>
 								<f:else>
 									<li>
 										<h3>Remove the Welcome package (optional)</h3>
-										<p>Delete the Welcome package with <code>./flow3 package delete Welcome</code></p>
+										<p>Deactivate the Welcome package with<br /><code>./flow3 package deactivate Welcome</code></p>
 									</li>
 								</f:else>
 							</f:if>
