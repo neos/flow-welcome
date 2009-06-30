@@ -131,7 +131,8 @@ h1, h2, h3, h4 {
 #window .tabs .tab-active .title-about,
 #window .tabs .tab-inactive .title-about {
 	z-index: 80;
-	left: 340px;
+/*	left: 340px;*/
+	left: 150px;
 	width: 250px;
 }
 #window .tabs .tab-active .title-about {
