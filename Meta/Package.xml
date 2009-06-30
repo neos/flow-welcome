@@ -5,5 +5,4 @@
 	<description>This package provides a start screen for the FLOW3 distribution with a small "getting started", a tutorial and links
 	to online resources.</description>
 	<version>1.0.0-alpha2</version>
-	<state>Alpha</state>
 </package>
