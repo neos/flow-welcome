@@ -23,16 +23,8 @@ namespace F3\Welcome\Controller;
  *                                                                        */
 
 /**
- * @package Welcome
- * @subpackage Controller
- * @version $Id$
- */
-
-/**
  * Controller with a welcome start screen for FLOW3
  *
- * @package Welcome
- * @subpackage Controller
  * @version $Id$
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  */
