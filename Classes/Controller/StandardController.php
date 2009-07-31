@@ -46,7 +46,7 @@ class StandardController extends \F3\FLOW3\MVC\Controller\ActionController {
 	 */
 	public function indexAction() {
 		$this->view->assign('baseURI', $this->request->getBaseURI());
-		$this->view->assign('flow3CommandLinePath', realpath(FLOW3_PATH_WEB . '../'));
+		$this->view->assign('flow3CommandLinePath', realpath(FLOW3_PATH_ROOT));
 		$this->view->assign('isWindows', $this->isWindows());
 
 		$flow3Package = $this->packageManager->getPackage('FLOW3');
