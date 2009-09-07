@@ -55,6 +55,8 @@ class StandardController extends \F3\FLOW3\MVC\Controller\ActionController {
 
 		$activePackages = $this->packageManager->getActivePackages();
 		$this->view->assign('activePackages', $activePackages);
+
+		$this->view->assign('notDevelopmentContext', $this->objectManager->getContext() !== 'Development');
 	}
 
 	/**
