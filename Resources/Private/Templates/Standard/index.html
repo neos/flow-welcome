@@ -45,20 +45,22 @@ window.addEvent('domready', function() {
 					<div class="spacer">
 						<p>Here's how to get into the flow:</p>
 						<ol class="steps">
-							<f:if condition="{isWindows}">
-								<f:then>
-									<li>
-										<h3>Kickstart your first package</h3>
-										<p>Go to <code>{flow3CommandLinePath}\Public</code><br />and run <code>php index.php Kickstart Kickstart generatePackage --package-key MyPackage</code> to create a package with a standard controller</p>
-									</li>
-								</f:then>
-								<f:else>
-									<li>
-										<h3>Kickstart your first package</h3>
-										<p>Go to <code>{flow3CommandLinePath}</code><br />and run <code>./flow3 kickstart package MyPackage</code> to create a package with a standard controller</p>
-									</li>
-								</f:else>
-							</f:if>
+							<li>
+								<h3>Kickstart your first package</h3>
+								<f:if condition="{isWindows}">
+									<f:then>
+										<p>Go to <code>{flow3PathRoot}</code><br />and run the following lines of code:<br />
+											<code>set FLOW3_CONTEXT=Development</code><br />
+											<code>set FLOW3_ROOTPATH={flow3PathRoot}</code><br />
+											<code>set FLOW3_WEBPATH={flow3PathWeb}</code><br />
+											<code>php Packages\Framework\FLOW3\Scripts\FLOW3.php Kickstart Kickstart generatePackage --packageKey MyPackage</code><br />
+											to create a package with a standard controller</p>
+									</f:then>
+									<f:else>
+										<p>Go to <code>{flow3PathRoot}</code><br />and run <code>./flow3 kickstart package MyPackage</code> to create a package with a standard controller</p>
+									</f:else>
+								</f:if>
+							</li>
 							<li>
 								<h3>Test your controller</h3>
 								<p>Run <a href="{baseURI}MyPackage">{baseURI}MyPackage</a> in your webbrowser</p>
@@ -71,7 +73,7 @@ window.addEvent('domready', function() {
 								<f:then>
 									<li>
 										<h3>Remove the Welcome package (optional)</h3>
-										<p>Deactivate the Welcome package with<br /><code>php index.php FLOW3 Package Manager deactivate --package-key Welcome</code></p>
+										<p>Deactivate the Welcome package with<br /><code>php Packages\Framework\FLOW3\Scripts\FLOW3.php FLOW3 Package Manager deactivate --packageKey Welcome</code></p>
 									</li>
 								</f:then>
 								<f:else>
