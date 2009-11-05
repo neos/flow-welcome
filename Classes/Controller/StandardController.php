@@ -45,7 +45,6 @@ class StandardController extends \F3\FLOW3\MVC\Controller\ActionController {
 	 * @author Bastian Waidelich <bastian@typo3.org>
 	 */
 	public function indexAction() {
-		$this->view->assign('baseURI', $this->request->getBaseURI());
 		$this->view->assign('flow3PathRoot', realpath(FLOW3_PATH_ROOT));
 		$this->view->assign('flow3PathWeb', realpath(FLOW3_PATH_WEB));
 		$this->view->assign('myPackageUrl', $this->uriBuilder->uriFor('index', array(), 'Standard', 'MyPackage'));
