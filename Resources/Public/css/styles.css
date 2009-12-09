@@ -81,9 +81,18 @@ h1, h2, h3, h4 {
 	width: 800px;
 	margin: 10% auto 10px auto;
 }
-#messages .warning {
-	border:solid 2px #a33;
-	padding: 5px;
+#messages .notice {
+	border: 1px solid #ffeda6;
+	background: #ffeda6 url('../images/messages-notice-bg.png') repeat-x;
+}
+#messages .notice h2 {
+	background: url('../images/messages-notice-icon.png') no-repeat 7px 9px;
+	padding: 10px 0 0 30px;
+}
+#messages .notice p {
+	margin: 0;
+	padding: 10px 30px 10px 30px;
+	font-size: 12px;
 }
 #window {
 	position: relative;
