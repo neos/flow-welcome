@@ -31,7 +31,7 @@ namespace F3\Welcome\Controller;
 class StandardController extends \F3\FLOW3\MVC\Controller\ActionController {
 
 	/**
-	 * @var \F3\FLOW3\Package\ManagerInterface
+	 * @var \F3\FLOW3\Package\PackageManagerInterface
 	 * @inject
 	 */
 	protected $packageManager;
