@@ -6,9 +6,9 @@ body {
 	font-family: "Trebuchet MS", verdana, arial, helvetica;
 	font-size: 14px;
 	color: #515151;
-   	line-height: 17px;
+	line-height: 17px;
 	background-color: #515151;
-	background-image: url('../images/application-bar-bg.gif');
+	background-image: url('../Images/Application-Bar-Bg.gif');
 	background-position: top left;
 	background-repeat: repeat-x;
 	margin: 0;
@@ -65,7 +65,7 @@ h1, h2, h3, h4 {
 	width: 67px;
 	height: 21px;
 	float: left;
-	background: url('../images/flow3-logo-white-on-dark.gif') no-repeat;
+	background: url('../Images/Flow3-Logo-White-On-Dark.gif') no-repeat;
 	margin: 3px 15px 0 15px;
 }
 #application-bar .version {
@@ -83,10 +83,10 @@ h1, h2, h3, h4 {
 }
 #messages .notice {
 	border: 1px solid #ffeda6;
-	background: #ffeda6 url('../images/messages-notice-bg.png') repeat-x;
+	background: #ffeda6 url('../Images/Messages-Notice-Bg.png') repeat-x;
 }
 #messages .notice h2 {
-	background: url('../images/messages-notice-icon.png') no-repeat 7px 9px;
+	background: url('../Images/Messages-Notice-Icon.png') no-repeat 7px 9px;
 	padding: 10px 0 0 30px;
 }
 #messages .notice p {
@@ -105,13 +105,13 @@ h1, h2, h3, h4 {
 }
 #window .tabs .tab-inactive h2.title {
 	cursor: pointer;
-} 
+}
 #window .tabs .tab-active h2.title {
 	padding: 0;
 	margin: 0;
 }
 #window .tabs .tab-active .content {
-	background: #fff url('../images/tab-content-bg.gif') repeat-x;
+	background: #fff url('../Images/Tab-Content-Bg.gif') repeat-x;
 	padding: 50px 20px 0 20px;
 	border: 1px solid #fff;
 }
@@ -130,10 +130,10 @@ h1, h2, h3, h4 {
 	text-indent: -9999px;
 }
 #window .tabs .tab-active .title-getting-started {
-	background: url('../images/tabs-title-getting-started-active.png') no-repeat;
+	background: url('../Images/Tabs-Title-Getting-Started-Active.png') no-repeat;
 }
 #window .tabs .tab-inactive .title-getting-started {
-	background: url('../images/tabs-title-getting-started.png') no-repeat;
+	background: url('../Images/Tabs-Title-Getting-Started.png') no-repeat;
 }
 #window .tabs .tab-active .title-tutorial,
 #window .tabs .tab-inactive .title-tutorial {
@@ -142,23 +142,22 @@ h1, h2, h3, h4 {
 	width: 250px;
 }
 #window .tabs .tab-active .title-tutorial {
-	background: url('../images/tabs-title-tutorial-active.png') no-repeat;
+	background: url('../Images/Tabs-Title-Tutorial-Active.png') no-repeat;
 }
 #window .tabs .tab-inactive .title-tutorial {
-	background: url('../images/tabs-title-tutorial.png') no-repeat;
+	background: url('../Images/Tabs-Title-Tutorial.png') no-repeat;
 }
 #window .tabs .tab-active .title-about,
 #window .tabs .tab-inactive .title-about {
 	z-index: 80;
-/*	left: 340px;*/
 	left: 150px;
 	width: 250px;
 }
 #window .tabs .tab-active .title-about {
-	background: url('../images/tabs-title-about-active.png') no-repeat;
+	background: url('../Images/Tabs-Title-About-Active.png') no-repeat;
 }
 #window .tabs .tab-inactive .title-about {
-	background: url('../images/tabs-title-about.png') no-repeat;
+	background: url('../Images/Tabs-Title-About.png') no-repeat;
 }
 
 #window .tabs .tab-active .content .main {
