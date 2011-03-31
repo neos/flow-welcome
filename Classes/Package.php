@@ -1,9 +1,9 @@
 <?php
 declare(ENCODING = 'utf-8');
-namespace F3\Welcome\Controller;
+namespace F3\Welcome;
 
 /*                                                                        *
- * This script belongs to the FLOW3 package "Welcome".                    *
+ * This script belongs to the FLOW3 framework.                            *
  *                                                                        *
  * It is free software; you can redistribute it and/or modify it under    *
  * the terms of the GNU Lesser General Public License as published by the *
@@ -22,49 +22,15 @@ namespace F3\Welcome\Controller;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
+use \F3\FLOW3\Package\Package as BasePackage;
+
 /**
- * Controller with a welcome start screen for FLOW3
+ * The Welcome Package
  *
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  */
-class StandardController extends \F3\FLOW3\MVC\Controller\ActionController {
+class Package extends BasePackage {
 
-	/**
-	 * @var \F3\FLOW3\Package\PackageManagerInterface
-	 * @inject
-	 */
-	protected $packageManager;
-
-	/**
-	 * Index action
-	 *
-	 * @return void
-	 * @author Christopher Hlubek <hlubek@networkteam.com>
-	 * @author Robert Lemke <robert@typo3.org>
-	 * @author Bastian Waidelich <bastian@typo3.org>
-	 */
-	public function indexAction() {
-		$this->view->assign('flow3PathRoot', realpath(FLOW3_PATH_ROOT));
-		$this->view->assign('flow3PathWeb', realpath(FLOW3_PATH_WEB));
-		$this->view->assign('myPackageUrl', $this->uriBuilder->uriFor('index', array(), 'Standard', 'MyPackage'));
-		$this->view->assign('isWindows', DIRECTORY_SEPARATOR !== '/');
-
-		$flow3Package = $this->packageManager->getPackage('FLOW3');
-		$version = $flow3Package->getPackageMetaData()->getVersion();
-		$this->view->assign('version', $version);
-
-		$activePackages = $this->packageManager->getActivePackages();
-		$this->view->assign('activePackages', $activePackages);
-
-		$this->view->assign('notDevelopmentContext', $this->objectManager->getContext() !== 'Development');
-	}
-
-	/**
-	 * @return void
-	 * @author Robert Lemke <robert@typo3.org>
-	 */
-	public function redirectAction() {
-		$this->redirect('index');
-	}
 }
+
 ?>
