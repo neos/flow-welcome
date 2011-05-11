@@ -66,7 +66,15 @@ window.addEvent('domready', function() {
 							</li>
 							<li>
 								<h3>Test your controller</h3>
-								<p>Run <a href="{myPackageUrl}">MyPackage</a> in your webbrowser</p>
+								<f:if condition="{isMyPackageActive}">
+									<f:then>
+										<p>Run <f:link.action package="MyPackage">MyPackage</f:link.action> in your webbrowser</p>
+									</f:then>
+									<f:else>
+										<p><em>"MyPackage" either not created or not activated. Follow step 1 and <a href="javascript: window.location.reload()">reload</a> this page.</em></p>
+										<p><em>If you named your package "SomethingElse" visit {baseUri}SomethingElse/</em></p>
+									</f:else>
+								</f:if>
 							</li>
 							<li>
 								<h3>Read the tutorial</h3>
@@ -107,7 +115,6 @@ window.addEvent('domready', function() {
 					<ul>
 						<li><a href="http://flow3.typo3.org/get-involved/mailing-lists-newsgroups/" target="flow3">Discuss your experience</a></li>
 						<li><a href="http://flow3.typo3.org/get-involved/wiki-and-issuetracker/" target="flow3">Report a bug</a></li>
-						<li><f:link.action package="Testing" additionalAttributes="{target: 'flow3'}">Run the tests</f:link.action></li>
 					</ul>
 				</div>
 			</div>

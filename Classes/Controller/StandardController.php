@@ -46,7 +46,12 @@ class StandardController extends \F3\FLOW3\MVC\Controller\ActionController {
 	public function indexAction() {
 		$this->view->assign('flow3PathRoot', realpath(FLOW3_PATH_ROOT));
 		$this->view->assign('flow3PathWeb', realpath(FLOW3_PATH_WEB));
-		$this->view->assign('myPackageUrl', $this->uriBuilder->uriFor('index', array(), 'Standard', 'MyPackage'));
+		$isMyPackageActive = $this->packageManager->isPackageActive('MyPackage');
+		$this->view->assign('isMyPackageActive', $isMyPackageActive);
+
+		$baseUri = $this->request->getBaseUri();
+		$this->view->assign('baseUri', $baseUri);
+
 		$this->view->assign('isWindows', DIRECTORY_SEPARATOR !== '/');
 
 		$flow3Package = $this->packageManager->getPackage('FLOW3');
@@ -67,4 +72,5 @@ class StandardController extends \F3\FLOW3\MVC\Controller\ActionController {
 		$this->redirect('index');
 	}
 }
+
 ?>
