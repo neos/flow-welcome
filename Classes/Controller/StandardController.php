@@ -1,5 +1,5 @@
 <?php
-namespace F3\Welcome\Controller;
+namespace TYPO3\Welcome\Controller;
 
 /*                                                                        *
  * This script belongs to the FLOW3 package "Welcome".                    *
@@ -26,10 +26,10 @@ namespace F3\Welcome\Controller;
  *
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  */
-class StandardController extends \F3\FLOW3\MVC\Controller\ActionController {
+class StandardController extends \TYPO3\FLOW3\MVC\Controller\ActionController {
 
 	/**
-	 * @var \F3\FLOW3\Package\PackageManagerInterface
+	 * @var \TYPO3\FLOW3\Package\PackageManagerInterface
 	 * @inject
 	 */
 	protected $packageManager;
@@ -45,15 +45,14 @@ class StandardController extends \F3\FLOW3\MVC\Controller\ActionController {
 	public function indexAction() {
 		$this->view->assign('flow3PathRoot', realpath(FLOW3_PATH_ROOT));
 		$this->view->assign('flow3PathWeb', realpath(FLOW3_PATH_WEB));
-		$isMyPackageActive = $this->packageManager->isPackageActive('MyPackage');
-		$this->view->assign('isMyPackageActive', $isMyPackageActive);
+		$this->view->assign('isMyPackageActive', $this->packageManager->isPackageActive('MyCompany.MyPackage'));
 
 		$baseUri = $this->request->getBaseUri();
 		$this->view->assign('baseUri', $baseUri);
 
 		$this->view->assign('isWindows', DIRECTORY_SEPARATOR !== '/');
 
-		$flow3Package = $this->packageManager->getPackage('FLOW3');
+		$flow3Package = $this->packageManager->getPackage('TYPO3.FLOW3');
 		$version = $flow3Package->getPackageMetaData()->getVersion();
 		$this->view->assign('version', $version);
 

@@ -182,7 +182,7 @@ h1, h2, h3, h4 {
 }
 #window .tabs .content .main ol.steps li code {
 	font-family: Monaco, "Courier New", monospace;
-	font-size: 13px;
+	font-size: 12px;
 	color: #000;
 	background: #f7f7f7;
 	padding: 2px;

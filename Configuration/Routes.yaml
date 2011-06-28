@@ -2,22 +2,20 @@
 # Default routes configuration for the Welcome package                   #
 #                                                                        #
 
-# $Id: Routes.yaml 2179 2009-04-24 12:28:32Z k-fish $
-
 -
-  name: 'Standard route'
+  name: 'Welcome screen'
   uriPattern: 'flow3/welcome'
   defaults:
-    '@package':    'Welcome'
+    '@package':    'TYPO3.Welcome'
     '@controller': 'Standard'
     '@action':     'index'
     '@format':     'html'
 
 -
-  name: 'Redirect'
+  name: 'Redirect to welcome screen'
   uriPattern: ''
   defaults:
-    '@package':    'Welcome'
+    '@package':    'TYPO3.Welcome'
     '@controller': 'Standard'
     '@action':     'redirect'
     '@format':     'html'

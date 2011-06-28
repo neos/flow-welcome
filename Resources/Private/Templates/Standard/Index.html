@@ -56,11 +56,12 @@ window.addEvent('domready', function() {
 											<code>set FLOW3_CONTEXT=Development</code><br />
 											<code>set FLOW3_ROOTPATH={flow3PathRoot}</code><br />
 											<code>set FLOW3_WEBPATH={flow3PathWeb}</code><br />
-											<code>php Packages\Framework\FLOW3\Scripts\FLOW3.php Kickstart Kickstart generatePackage --packageKey MyPackage</code><br />
+											<code>php Packages\Framework\FLOW3\Scripts\FLOW3.php kickstart:kickstart:package --package-key MyCompany.MyPackage</code><br />
 											to create a package with a standard controller</p>
 									</f:then>
 									<f:else>
-										<p>Go to <code>{flow3PathRoot}</code><br />and run <code>./flow3 kickstart package MyPackage</code> to create a package with a standard controller</p>
+										<p>Go to <code>{flow3PathRoot}</code><br />and run<br /><code>./flow3_dev kickstart:kickstart:package --package-key MyCompany.MyPackage</code><br />
+											to create a package with a standard controller</p>
 									</f:else>
 								</f:if>
 							</li>
@@ -68,7 +69,7 @@ window.addEvent('domready', function() {
 								<h3>Test your controller</h3>
 								<f:if condition="{isMyPackageActive}">
 									<f:then>
-										<p>Run <f:link.action package="MyPackage">MyPackage</f:link.action> in your webbrowser</p>
+										<p>Click on <f:link.action package="MyCompany.MyPackage">this link</f:link.action> to trigger your new package</p>
 									</f:then>
 									<f:else>
 										<p><em>"MyPackage" either not created or not activated. Follow step 1 and <a href="javascript: window.location.reload()">reload</a> this page.</em></p>
@@ -105,7 +106,7 @@ window.addEvent('domready', function() {
 					</ul>
 					<h3>Read the documentation</h3>
 					<ul>
-						<li><f:link.action package="DocumentationBrowser" additionalAttributes="{target: 'flow3'}">Package docs (local)</f:link.action></li>
+						<li><f:link.action package="TYPO3.DocumentationBrowser" additionalAttributes="{target: 'flow3'}">Package docs (local)</f:link.action></li>
 						<li><a href="http://flow3.typo3.org/documentation/manuals/flow3/" target="flow3">FLOW3 reference</a></li>
 						<li><a href="http://flow3.typo3.org/documentation/api/" target="flow3">FLOW3 API</a></li>
 						<li><a href="http://flow3.typo3.org/documentation/coding-guidelines/" target="flow3">Coding guidelines</a></li>
