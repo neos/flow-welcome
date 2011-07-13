@@ -56,11 +56,11 @@ window.addEvent('domready', function() {
 											<code>set FLOW3_CONTEXT=Development</code><br />
 											<code>set FLOW3_ROOTPATH={flow3PathRoot}</code><br />
 											<code>set FLOW3_WEBPATH={flow3PathWeb}</code><br />
-											<code>php Packages\Framework\FLOW3\Scripts\FLOW3.php kickstart:kickstart:package --package-key MyCompany.MyPackage</code><br />
+											<code>flow3.bat kickstart:package MyCompany.MyPackage</code><br />
 											to create a package with a standard controller</p>
 									</f:then>
 									<f:else>
-										<p>Go to <code>{flow3PathRoot}</code><br />and run<br /><code>./flow3 kickstart:kickstart:package --package-key MyCompany.MyPackage</code><br />
+										<p>Go to <code>{flow3PathRoot}</code><br />and run<br /><code>./flow3 kickstart:package MyCompany.MyPackage</code><br />
 											to create a package with a standard controller</p>
 									</f:else>
 								</f:if>
@@ -72,7 +72,7 @@ window.addEvent('domready', function() {
 										<p>Click on <f:link.action package="MyCompany.MyPackage">this link</f:link.action> to trigger your new package</p>
 									</f:then>
 									<f:else>
-										<p><em>"MyPackage" either not created or not activated. Follow step 1 and <a href="javascript: window.location.reload()">reload</a> this page.</em></p>
+										<p><em>"MyCompany.MyPackage" has either not yet been created or not activated. Follow step 1 and <a href="javascript: window.location.reload()">reload</a> this page.</em></p>
 										<p><em>If you named your package "SomethingElse" visit {baseUri}SomethingElse/</em></p>
 									</f:else>
 								</f:if>
