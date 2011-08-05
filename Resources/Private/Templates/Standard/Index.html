@@ -79,19 +79,19 @@ window.addEvent('domready', function() {
 							</li>
 							<li>
 								<h3>Read the tutorial</h3>
-								<p>Switch over to the <a href="http://flow3.typo3.org/documentation/tutorials" target="flow3">tutorials</a> to get the most out of FLOW3.</p>
+								<p>Switch over to the <a href="http://flow3.typo3.org/fileadmin/manual/nighly/Quickstart/Index.html" target="flow3">Quickstart Tutorial</a> to get the a first overview.</p>
 							</li>
 							<f:if condition="{isWindows}">
 								<f:then>
 									<li>
 										<h3>Remove the Welcome package (optional)</h3>
-										<p>Deactivate the Welcome package with<br /><code>php Packages\Framework\FLOW3\Scripts\FLOW3.php FLOW3 Package Manager deactivate --packageKey Welcome</code></p>
+										<p>Deactivate the Welcome package with<br /><code>flow3.bat package:deactivate TYPO3.Welcome</code></p>
 									</li>
 								</f:then>
 								<f:else>
 									<li>
 										<h3>Remove the Welcome package (optional)</h3>
-										<p>Deactivate the Welcome package with<br /><code>./flow3 package deactivate Welcome</code></p>
+										<p>Deactivate the Welcome package with<br /><code>./flow3 package:deactivate TYPO3.Welcome</code></p>
 									</li>
 								</f:else>
 							</f:if>
@@ -106,8 +106,7 @@ window.addEvent('domready', function() {
 					</ul>
 					<h3>Read the documentation</h3>
 					<ul>
-						<li><f:link.action package="TYPO3.DocumentationBrowser" additionalAttributes="{target: 'flow3'}">Package docs (local)</f:link.action></li>
-						<li><a href="http://flow3.typo3.org/documentation/manuals/flow3/" target="flow3">FLOW3 reference</a></li>
+						<li><a href="http://flow3.typo3.org/fileadmin/manual/nighly/" target="flow3">Pre-Beta Documentation</a></li>
 						<li><a href="http://flow3.typo3.org/documentation/api/" target="flow3">FLOW3 API</a></li>
 						<li><a href="http://flow3.typo3.org/documentation/coding-guidelines/" target="flow3">Coding guidelines</a></li>
 						<li><a href="http://forge.typo3.org/projects/package-flow3/issues?query_id=55" target="flow3">Known issues</a></li>
