@@ -11,6 +11,8 @@ namespace TYPO3\Welcome\Controller;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
+use TYPO3\FLOW3\Annotations as FLOW3;
+
 /**
  * Controller with a welcome start screen for FLOW3
  *
@@ -19,7 +21,7 @@ class StandardController extends \TYPO3\FLOW3\MVC\Controller\ActionController {
 
 	/**
 	 * @var \TYPO3\FLOW3\Package\PackageManagerInterface
-	 * @inject
+	 * @FLOW3\Inject
 	 */
 	protected $packageManager;
 
