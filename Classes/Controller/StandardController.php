@@ -29,9 +29,6 @@ class StandardController extends \TYPO3\FLOW3\MVC\Controller\ActionController {
 	 * Index action
 	 *
 	 * @return void
-	 * @author Christopher Hlubek <hlubek@networkteam.com>
-	 * @author Robert Lemke <robert@typo3.org>
-	 * @author Bastian Waidelich <bastian@typo3.org>
 	 */
 	public function indexAction() {
 		$this->view->assign('flow3PathRoot', realpath(FLOW3_PATH_ROOT));
@@ -55,7 +52,6 @@ class StandardController extends \TYPO3\FLOW3\MVC\Controller\ActionController {
 
 	/**
 	 * @return void
-	 * @author Robert Lemke <robert@typo3.org>
 	 */
 	public function redirectAction() {
 		$this->redirect('index');
