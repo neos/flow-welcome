@@ -81,20 +81,19 @@ window.addEvent('domready', function() {
 								<h3>Read the tutorial</h3>
 								<p>Switch over to the <a href="http://flow3.typo3.org/documentation/tutorials/" target="flow3">Quickstart Tutorial</a> to get the a first overview.</p>
 							</li>
-							<f:if condition="{isWindows}">
-								<f:then>
-									<li>
-										<h3>Remove the Welcome package (optional)</h3>
-										<p>Deactivate the Welcome package with<br /><code>flow3.bat package:deactivate TYPO3.Welcome</code></p>
-									</li>
-								</f:then>
-								<f:else>
-									<li>
-										<h3>Remove the Welcome package (optional)</h3>
-										<p>Deactivate the Welcome package with<br /><code>./flow3 package:deactivate TYPO3.Welcome</code></p>
-									</li>
-								</f:else>
-							</f:if>
+							<li>
+								<h3>Deactivate the Welcome package (optional)</h3>
+								<p>Deactivate the Welcome package with<br />
+								<f:if condition="{isWindows}">
+									<f:then>
+										<code>flow3.bat package:deactivate TYPO3.Welcome</code>
+									</f:then>
+									<f:else>
+										<code>./flow3 package:deactivate TYPO3.Welcome</code>
+									</f:else>
+								</f:if>
+								<p>Afterwards make sure to <strong>remove the &quot;Welcome&quot; SubRoute definition</strong> from the global routes in <em>Configuration/Routes.yaml</em>.</p>
+							</li>
 						</ol>
 					</div>
 				</div>
