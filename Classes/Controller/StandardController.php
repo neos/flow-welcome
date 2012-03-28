@@ -17,7 +17,7 @@ use TYPO3\FLOW3\Annotations as FLOW3;
  * Controller with a welcome start screen for FLOW3
  *
  */
-class StandardController extends \TYPO3\FLOW3\MVC\Controller\ActionController {
+class StandardController extends \TYPO3\FLOW3\Mvc\Controller\ActionController {
 
 	/**
 	 * @var \TYPO3\FLOW3\Package\PackageManagerInterface
@@ -35,7 +35,7 @@ class StandardController extends \TYPO3\FLOW3\MVC\Controller\ActionController {
 		$this->view->assign('flow3PathWeb', realpath(FLOW3_PATH_WEB));
 		$this->view->assign('isMyPackageActive', $this->packageManager->isPackageActive('MyCompany.MyPackage'));
 
-		$baseUri = $this->request->getBaseUri();
+		$baseUri = $this->request->getHttpRequest()->getBaseUri();
 		$this->view->assign('baseUri', $baseUri);
 
 		$this->view->assign('isWindows', DIRECTORY_SEPARATOR !== '/');
