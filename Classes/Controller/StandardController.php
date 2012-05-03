@@ -47,7 +47,7 @@ class StandardController extends \TYPO3\FLOW3\Mvc\Controller\ActionController {
 		$activePackages = $this->packageManager->getActivePackages();
 		$this->view->assign('activePackages', $activePackages);
 
-		$this->view->assign('notDevelopmentContext', $this->objectManager->getContext() !== 'Development');
+		$this->view->assign('notDevelopmentContext', !$this->objectManager->getContext()->isDevelopment());
 	}
 
 	/**
