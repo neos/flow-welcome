@@ -149,7 +149,7 @@ window.addEvent('domready', function() {
 						<ul class="packages">
 						<f:for each="{activePackages}" as="package">
 							<li class="package">
-								<h4>{package.packageMetaData.title} <small><span class="package-key">{package.packageKey}</span> <span class="package-version">{package.packageMetaData.version}</span></small></h4>
+								<h4><span class="package-key">{package.packageKey}</span> <small><span class="package-version">{package.packageMetaData.version}</span></small></h4>
 								<p>{package.packageMetaData.description}</p>
 							</li>
 						</f:for>
