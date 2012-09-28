@@ -1,12 +1,12 @@
 {
     "name": "typo3/welcome",
-    "type": "flow3-framework",
-    "description": "This package provides a start screen for the FLOW3 distribution\n\twith links to online resources.",
+    "type": "flow-framework",
+    "description": "This package provides a start screen for the TYPO3 Flow distribution with links to online resources.",
     "license": "LGPL-3.0+",
     "version": "1.2.0-dev",
     "require": {
-        "typo3/flow3": "*",
-        "flow3/composer-installers": "*"
+        "typo3/flow": "*",
+        "typo3/flow-composer-installers": "*"
     },
     "autoload": {
         "psr-0": {

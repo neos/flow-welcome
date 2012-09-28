@@ -2,10 +2,10 @@
 <!DOCTYPE html
      PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:f="urn:flow3:fluid">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:f="urn:flow:fluid">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Welcome to FLOW3</title>
+<title>Welcome to TYPO3 Flow</title>
 <f:base />
 <link rel="stylesheet" type="text/css" href="../../../Public/Css/Styles.css" />
 <script type="text/javascript" src="../../../Public/JavaScript/mootools-1.2.2-core-yc.js"></script>
@@ -24,7 +24,7 @@ window.addEvent('domready', function() {
 <body>
 
 <div id="application-bar">
-<div class="logo">FLOW3</div> <h1 class="title">Welcome</h1>
+<div class="logo">TYPO3 Flow</div> <h1 class="title">Welcome</h1>
 <div class="version">{version}</div>
 </div>
 
@@ -32,9 +32,9 @@ window.addEvent('domready', function() {
 <f:if condition="{notDevelopmentContext}">
 	<div class="notice">
 		<h2>Switch to Development context</h2>
-		<p>You should enable the Development context for your first steps into the world of FLOW3!<br />
-		Check the <a href="http://flow3.typo3.org/documentation/guide.html" target="flow3">FLOW3 reference</a> and/or
-		the <a href="http://flow3.typo3.org/documentation/quickstart.html" target="flow3">Quickstart tutorial</a> for instructions.</p>
+		<p>You should enable the Development context for your first steps into the world of TYPO3 Flow!<br />
+		Check the <a href="http://flow.typo3.org/documentation/guide.html" target="flow">TYPO3 Flow reference</a> and/or
+		the <a href="http://flow.typo3.org/documentation/quickstart.html" target="flow">Quickstart tutorial</a> for instructions.</p>
 	</div>
 </f:if>
 </div>
@@ -52,15 +52,15 @@ window.addEvent('domready', function() {
 								<h3>Kickstart your first package</h3>
 								<f:if condition="{isWindows}">
 									<f:then>
-										<p>Go to <code>{flow3PathRoot}</code><br />and run the following lines of code:<br />
-											<code>set FLOW3_CONTEXT=Development</code><br />
-											<code>set FLOW3_ROOTPATH={flow3PathRoot}</code><br />
-											<code>set FLOW3_WEBPATH={flow3PathWeb}</code><br />
-											<code>flow3.bat kickstart:package MyCompany.MyPackage</code><br />
+										<p>Go to <code>{flowPathRoot}</code><br />and run the following lines of code:<br />
+											<code>set FLOW_CONTEXT=Development</code><br />
+											<code>set FLOW_ROOTPATH={flowPathRoot}</code><br />
+											<code>set FLOW_WEBPATH={flowPathWeb}</code><br />
+											<code>flow.bat kickstart:package MyCompany.MyPackage</code><br />
 											to create a package with a standard controller</p>
 									</f:then>
 									<f:else>
-										<p>Go to <code>{flow3PathRoot}</code><br />and run<br /><code>./flow3 kickstart:package MyCompany.MyPackage</code><br />
+										<p>Go to <code>{flowPathRoot}</code><br />and run<br /><code>./flow kickstart:package MyCompany.MyPackage</code><br />
 											to create a package with a standard controller</p>
 									</f:else>
 								</f:if>
@@ -79,17 +79,17 @@ window.addEvent('domready', function() {
 							</li>
 							<li>
 								<h3>Read the tutorial</h3>
-								<p>Switch over to the <a href="http://flow3.typo3.org/documentation/quickstart.html" target="flow3">Quickstart Tutorial</a> to get the a first overview.</p>
+								<p>Switch over to the <a href="http://flow.typo3.org/documentation/quickstart.html" target="flow">Quickstart Tutorial</a> to get the a first overview.</p>
 							</li>
 							<li>
 								<h3>Deactivate the Welcome package (optional)</h3>
 								<p>Deactivate the Welcome package with<br />
 								<f:if condition="{isWindows}">
 									<f:then>
-										<code>flow3.bat package:deactivate TYPO3.Welcome</code>
+										<code>flow.bat package:deactivate TYPO3.Welcome</code>
 									</f:then>
 									<f:else>
-										<code>./flow3 package:deactivate TYPO3.Welcome</code>
+										<code>./flow package:deactivate TYPO3.Welcome</code>
 									</f:else>
 								</f:if>
 								<p>Afterwards make sure to <strong>remove the &quot;Welcome&quot; SubRoute definition</strong> from the global routes in <em>Configuration/Routes.yaml</em>.</p>
@@ -101,19 +101,19 @@ window.addEvent('domready', function() {
 				<div class="sidebar">
 					<h3>Join the community</h3>
 					<ul>
-						<li><a href="http://flow3.typo3.org" target="flow3">FLOW3</a></li>
+						<li><a href="http://flow.typo3.org" target="flow">TYPO3 Flow</a></li>
 					</ul>
 					<h3>Read the documentation</h3>
 					<ul>
-						<li><a href="http://flow3.typo3.org/documentation/" target="flow3">Documentation</a></li>
-						<li><a href="http://flow3.typo3.org/documentation/api/" target="flow3">FLOW3 API</a></li>
-						<li><a href="http://flow3.typo3.org/documentation/codingguidelines.html" target="flow3">Coding guidelines</a></li>
-						<li><a href="http://forge.typo3.org/projects/flow3-distribution-base/issues?query_id=90" target="flow3">Known issues</a></li>
+						<li><a href="http://flow.typo3.org/documentation/" target="flow">Documentation</a></li>
+						<li><a href="http://flow.typo3.org/documentation/api/" target="flow">TYPO3 Flow API</a></li>
+						<li><a href="http://flow.typo3.org/documentation/codingguidelines.html" target="flow">Coding guidelines</a></li>
+						<li><a href="http://forge.typo3.org/projects/flow-distribution-base/issues?query_id=90" target="flow">Known issues</a></li>
 					</ul>
 					<h3>Get involved</h3>
 					<ul>
-						<li><a href="http://flow3.typo3.org/support.html" target="flow3">Discuss your experience</a></li>
-						<li><a href="http://forge.typo3.org/projects/flow3-distribution-base/issues/new" target="flow3">Report a bug</a></li>
+						<li><a href="http://flow.typo3.org/support.html" target="flow">Discuss your experience</a></li>
+						<li><a href="http://forge.typo3.org/projects/flow-distribution-base/issues/new" target="flow">Report a bug</a></li>
 					</ul>
 				</div>
 			</div>
@@ -123,25 +123,25 @@ window.addEvent('domready', function() {
 			<div class="content">
 				<div class="main">
 					<div class="spacer">
-						<h3 class="first">About FLOW3</h3>
-						<p>FLOW3 is an offspring from the development of the upcoming rewrite of <a href="http://typo3.org">TYPO3</a> and
-						can be used independently from TYPO3 as an application framework. It is licensed under the terms of the GNU Lesser General
+						<h3 class="first">About TYPO3 Flow</h3>
+						<p>TYPO3 Flow is an offspring from the development of the rewrite of <a href="http://typo3.org">TYPO3 CMS</a> and
+						can be used independently as an application framework. It is licensed under the terms of the GNU Lesser General
 						Public License version 3 or later.</p>
 						<h3>Credits</h3>
-						<p>Many people have contributed to FLOW3 with ideas, design, testing, money, code and espresso. A big thank you goes to the
-						TYPO3 community and the members of the TYPO3 Assocation who made the development of FLOW3 possible at all.</p>
-						<p>The main part of FLOW3 was designed and developed by Robert Lemke. The persistence integration was developed and major
-						contributions to FLOW3 were made by Karsten Dambekalns, who co-leads the FLOW3 project. Andreas Förthner designed and developed the
-						Security Framework while Bastian Waidelich created the initial implementation of FLOW3's routing mechanism. Sebastian Kurf&uuml;rst
+						<p>Many people have contributed to TYPO3 Flow with ideas, design, testing, money, code and espresso. A big thank you goes to the
+						TYPO3 community and the members of the TYPO3 Association who made the development of TYPO3 Flow possible at all.</p>
+						<p>The main part of TYPO3 Flow was designed and developed by Robert Lemke. The persistence integration was developed and major
+						contributions to TYPO3 Flow were made by Karsten Dambekalns, who co-leads the project. Andreas Förthner designed and developed the
+						Security Framework while Bastian Waidelich created the initial implementation of TYPO3 Flow's routing mechanism. Sebastian Kurfürst
 						and Bastian Waidelich designed and implemented the Fluid templating engine.</p>
-						<p>Further code contributions were made by the FLOW3 team and others: Adrian Föder, Alexander Stehlik, Andreas Wolf, Aske Ertmann,
+						<p>Further code contributions were made by the TYPO3 Flow team and others: Adrian Föder, Alexander Stehlik, Andreas Wolf, Aske Ertmann,
 						Bernhard Fischer, Christian Jul Jensen, Christian Kuhn, Christian Müller, Christopher Hlubek, Daniel Brün, Felix Oertel, Ferdinand Kuhl,
 						Irene Höppner, Jochen Rau, Johannes Künsebeck, Julian Kleinhans, Julian Wachholz, Karol Gusak, Lars Peipmann, Lienhart Woitok, Marco Huber,
 						Martin Brüggemann, Martin Ficzel, Michael Klapper, Michael Sauter, Nils Jeisecke, Oliver Hader, Rens Admiraal, Sascha Egerer,
 						Stefan Neufeind, Stephan Schuler, Thomas Hempel, Thomas Layh, Tim Eilers, Tobias Liebig, Tolleiv Nietsch and Zach Davis.</p>
 						<p>The initial design of the AOP framework and the IoC container were inspired by the viFramework developed by Florian Grandel who
 						also pointed Robert to the Spring Framework which was a great source for inspiration. Further frameworks and projects which influenced
-						the design of FLOW3 are AspectJ, NanoContainer, Ruby on Rails, Symfony, QT and surely more.</p>
+						the design of TYPO3 Flow are AspectJ, NanoContainer, Ruby on Rails, Symfony, QT and surely more.</p>
 						<p>The overall design and concepts would be way less mature and elegant if experts like Martin Fowler, Eric Evans, Jimmy Nilsson,
 						Kent Beck or Paul Duvall wouldn't have shared their insights in books and talks.</p>
 						<p>Many more contributions have been made by various members of the TYPO3 and PHP community - thanks to all of you!</p>

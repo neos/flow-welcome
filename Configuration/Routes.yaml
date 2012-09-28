@@ -4,7 +4,7 @@
 
 -
   name: 'Welcome screen'
-  uriPattern: 'flow3/welcome'
+  uriPattern: 'flow/welcome'
   defaults:
     '@package':    'TYPO3.Welcome'
     '@controller': 'Standard'
