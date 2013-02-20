@@ -7,15 +7,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Welcome to FLOW3</title>
 <f:base />
-<link rel="stylesheet" type="text/css" href="../../../Public/Css/Styles.css" />
-<script type="text/javascript" src="../../../Public/JavaScript/mootools-1.2.2-core-yc.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../Public/Styles/Styles.css" />
+<script type="text/javascript" src="../../../Public/Libraries/jquery/jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
-window.addEvent('domready', function() {
-	$$('.tab').each(function(element, index) {
-		element.addClass(index == 0 ? 'tab-active' : 'tab-inactive');
-		element.getFirst('h2').addEvent('click', function() {
-			$$('.tab').removeClass('tab-active').addClass('tab-inactive');
-			element.addClass('tab-active').removeClass('tab-inactive');
+$(document).ready(function() {
+	$('.tab').each(function(index, element) {
+		$(element).addClass(index == 0 ? 'tab-active' : 'tab-inactive');
+		$(element).find('h2').first().click(function() {
+			$('.tab').removeClass('tab-active').addClass('tab-inactive');
+			$(element).addClass('tab-active').removeClass('tab-inactive');
 		});
 	});
 });
