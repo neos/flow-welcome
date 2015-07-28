@@ -3,14 +3,11 @@ html {
 	height: 100%;
 }
 body {
-	font-family: "Trebuchet MS", verdana, arial, helvetica;
+	font-family: "Trebuchet MS", verdana, arial, helvetica, sans-serif;
 	font-size: 14px;
 	color: #515151;
 	line-height: 17px;
-	background-color: #515151;
-	background-image: url('../Images/Application-Bar-Bg.gif');
-	background-position: top left;
-	background-repeat: repeat-x;
+	background: #515151 url('../Images/Application-Bar-Bg.gif') repeat-x top left;
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -62,16 +59,16 @@ h1, h2, h3, h4 {
 }
 #application-bar .logo {
 	text-indent: -999px;
-	width: 67px;
-	height: 21px;
+	width: 41px;
+	height: 16px;
 	float: left;
 	background: url('../Images/Flow-Logo-White-On-Dark.png') no-repeat;
-	margin: 3px 15px 0 15px;
+	margin: 7px 15px 0 15px;
 }
 #application-bar .version {
 	position: absolute;
 	right: 10px;
-	top: 0px;
+	top: 0;
 	color: #4d4d4d;
 	font-size: 12px;
 }
@@ -98,7 +95,7 @@ h1, h2, h3, h4 {
 	position: relative;
 	background: #efefef;
 	width: 800px;
-	margin: 0% auto 0 auto;
+	margin: 0 auto 0 auto;
 }
 #window .tabs .tab-inactive .content {
 	display: none;
@@ -124,7 +121,7 @@ h1, h2, h3, h4 {
 	position: absolute;
 	z-index: 100;
 	top: -4px;
-	left: 0px;
+	left: 0;
 	width: 210px;
 	height: 36px;
 	text-indent: -9999px;
@@ -224,7 +221,7 @@ h1, h2, h3, h4 {
 	font-size: 18px;
 }
 #window .tabs .content .main h3.first {
-	margin: 0px 0 10px 0;
+	margin: 0 0 10px 0;
 }
 #window .tabs .content .main ul.packages {
 	padding: 0 0 10px 10px;

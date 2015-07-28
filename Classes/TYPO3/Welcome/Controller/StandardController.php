@@ -15,7 +15,6 @@ use TYPO3\Flow\Annotations as Flow;
 
 /**
  * Controller with a welcome start screen for Flow
- *
  */
 class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 
@@ -57,5 +56,3 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 		$this->redirect('index');
 	}
 }
-
-?>
