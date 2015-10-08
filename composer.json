@@ -1,7 +1,7 @@
 {
     "name": "typo3/welcome",
-    "type": "typo3-flow-framework",
-    "description": "This package provides a start screen for the TYPO3 Flow distribution with links to online resources.",
+    "type": "typo3-flow-package",
+    "description": "This package provides a start screen for the Flow framework with links to online resources.",
     "license": "LGPL-3.0+",
     "require": {
         "typo3/flow": "2.3.*"
