@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:f="urn:flow:fluid">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Welcome to TYPO3 Flow</title>
+<title>Welcome to Flow</title>
 <f:base />
 <link rel="stylesheet" type="text/css" href="../../../Public/Styles/Styles.css" />
 <script type="text/javascript" src="../../../Public/Libraries/jquery/jquery-1.9.1.min.js"></script>
@@ -24,7 +24,7 @@ $(document).ready(function() {
 <body>
 
 <div id="application-bar">
-<div class="logo">TYPO3 Flow</div> <h1 class="title">Welcome</h1>
+<div class="logo">Flow</div> <h1 class="title">Welcome</h1>
 <div class="version">{version}</div>
 </div>
 
@@ -32,8 +32,8 @@ $(document).ready(function() {
 <f:if condition="{notDevelopmentContext}">
 	<div class="notice">
 		<h2>Switch to Development context</h2>
-		<p>You should enable the Development context for your first steps into the world of TYPO3 Flow!<br />
-		Check the <a href="http://flow.typo3.org/documentation/guide.html" target="flow">TYPO3 Flow reference</a> and/or
+		<p>You should enable the Development context for your first steps into the world of Flow!<br />
+		Check the <a href="http://flow.typo3.org/documentation/guide.html" target="flow">Flow reference</a> and/or
 		the <a href="http://flow.typo3.org/documentation/quickstart.html" target="flow">Quickstart tutorial</a> for instructions.</p>
 	</div>
 </f:if>
@@ -101,19 +101,19 @@ $(document).ready(function() {
 				<div class="sidebar">
 					<h3>Join the community</h3>
 					<ul>
-						<li><a href="http://flow.typo3.org" target="flow">TYPO3 Flow</a></li>
+						<li><a href="https://www.neos.io/join/contribute.html" target="flow">Contribute to Flow and Neos</a></li>
 					</ul>
 					<h3>Read the documentation</h3>
 					<ul>
-						<li><a href="http://flow.typo3.org/documentation/" target="flow">Documentation</a></li>
-						<li><a href="http://flow.typo3.org/documentation/api/" target="flow">TYPO3 Flow API</a></li>
-						<li><a href="http://flow.typo3.org/documentation/codingguidelines.html" target="flow">Coding guidelines</a></li>
-						<li><a href="https://jira.typo3.org/browse/FLOW" target="flow">Known issues</a></li>
+						<li><a href="http://flowframework.readthedocs.org/" target="flow">Documentation</a></li>
+						<li><a href="https://www.neos.io/documentation/api.html" target="flow">Flow API</a></li>
+						<li><a href="http://flowframework.readthedocs.org/en/stable/TheDefinitiveGuide/PartV/CodingGuideLines/index.html" target="flow">Coding guidelines</a></li>
+						<li><a href="https://jira.neos.io/browse/FLOW" target="flow">Known issues</a></li>
 					</ul>
 					<h3>Get involved</h3>
 					<ul>
-						<li><a href="http://flow.typo3.org/support" target="flow">Discuss your experience</a></li>
-						<li><a href="https://jira.typo3.org/secure/CreateIssue!default.jspa" target="flow">Report a bug</a></li>
+						<li><a href="https://discuss.neos.io/" target="flow">Discuss your experience</a></li>
+						<li><a href="https://jira.neos.io/secure/CreateIssue!default.jspa" target="flow">Report a bug</a></li>
 					</ul>
 				</div>
 			</div>
@@ -123,25 +123,25 @@ $(document).ready(function() {
 			<div class="content">
 				<div class="main">
 					<div class="spacer">
-						<h3 class="first">About TYPO3 Flow</h3>
-						<p>TYPO3 Flow is an offspring from the development of <a href="http://neos.typo3.org">Neos</a> and
-						can be used independently as an application framework. It is licensed under the terms of the GNU Lesser General
-						Public License version 3 or later.</p>
+						<h3 class="first">About Flow</h3>
+						<p>Flow is an offspring from the development of <a href="https://www.neos.io">Neos</a> and
+						can be used independently as an application framework. It is licensed under the terms of the MIT
+						license.</p>
 						<h3>Credits</h3>
-						<p>Many people have contributed to TYPO3 Flow with ideas, design, testing, money, code and espresso. A big thank you goes to the
-						TYPO3 community and the members of the TYPO3 Association who made the development of TYPO3 Flow possible at all.</p>
-						<p>The main part of TYPO3 Flow was designed and developed by Robert Lemke. The persistence integration was developed and major
-						contributions to TYPO3 Flow were made by Karsten Dambekalns, who co-leads the project. Andreas Förthner designed and developed the
-						Security Framework while Bastian Waidelich created the initial implementation of TYPO3 Flow's routing mechanism. Sebastian Kurfürst
-						and Bastian Waidelich designed and implemented the Fluid templating engine.</p>
-						<p>Further code contributions were made by the TYPO3 Flow team and others: Adrian Föder, Alexander Stehlik, Andreas Wolf, Aske Ertmann,
+						<p>Many people have contributed to Flow with ideas, design, testing, money, code and espresso. A big thank you goes to the
+						community and the members of the TYPO3 Association who made the development of Flow possible in the first years.</p>
+						<p>The main part of Flow was designed and developed by Robert Lemke. The persistence integration was developed and major
+						contributions to Flow were made by Karsten Dambekalns. Andreas Förthner designed and developed the Security Framework while
+						Bastian Waidelich created the initial implementation of Flow's routing mechanism. Sebastian Kurfürst and Bastian Waidelich
+						designed and implemented the Fluid templating engine.</p>
+						<p>Further code contributions were made by the Flow team and others: Adrian Föder, Alexander Stehlik, Andreas Wolf, Aske Ertmann,
 						Bernhard Fischer, Christian Jul Jensen, Christian Kuhn, Christian Müller, Christopher Hlubek, Daniel Brün, Felix Oertel, Ferdinand Kuhl,
 						Irene Höppner, Jochen Rau, Johannes Künsebeck, Julian Kleinhans, Julian Wachholz, Karol Gusak, Lars Peipmann, Lienhart Woitok, Marco Huber,
 						Martin Brüggemann, Martin Ficzel, Michael Klapper, Michael Sauter, Nils Jeisecke, Oliver Hader, Rens Admiraal, Sascha Egerer,
 						Stefan Neufeind, Stephan Schuler, Thomas Hempel, Thomas Layh, Tim Eilers, Tobias Liebig, Tolleiv Nietsch and Zach Davis.</p>
 						<p>The initial design of the AOP framework and the IoC container were inspired by the viFramework developed by Florian Grandel who
 						also pointed Robert to the Spring Framework which was a great source for inspiration. Further frameworks and projects which influenced
-						the design of TYPO3 Flow are AspectJ, NanoContainer, Ruby on Rails, Symfony, QT and surely more.</p>
+						the design of Flow are AspectJ, NanoContainer, Ruby on Rails, Symfony, QT and surely more.</p>
 						<p>The overall design and concepts would be way less mature and elegant if experts like Martin Fowler, Eric Evans, Jimmy Nilsson,
 						Kent Beck or Paul Duvall wouldn't have shared their insights in books and talks.</p>
 						<p>Many more contributions have been made by various members of the TYPO3 and PHP community - thanks to all of you!</p>
