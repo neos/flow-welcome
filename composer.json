@@ -4,7 +4,7 @@
     "description": "This package provides a start screen for the Flow framework with links to online resources.",
     "license": "MIT",
     "require": {
-        "typo3/flow": "*"
+        "typo3/flow": "3.2.*"
     },
     "autoload": {
         "psr-0": {
