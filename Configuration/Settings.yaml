@@ -1,0 +1,6 @@
+TYPO3:
+  Flow:
+    mvc:
+      routes:
+        'TYPO3.Welcome':
+          position: 'start'
