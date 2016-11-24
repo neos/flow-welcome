@@ -1,14 +1,14 @@
 {
-    "name": "typo3/welcome",
-    "type": "typo3-flow-package",
+    "name": "neos/welcome",
+    "type": "neos-package",
     "description": "This package provides a start screen for the Flow framework with links to online resources.",
     "license": "MIT",
     "require": {
         "neos/flow": "*"
     },
     "autoload": {
-        "psr-0": {
-            "TYPO3\\Welcome": "Classes"
+        "psr-4": {
+            "Neos\\Welcome\\": "Classes"
         }
     }
 }

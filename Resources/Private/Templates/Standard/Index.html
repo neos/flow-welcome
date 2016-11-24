@@ -86,10 +86,10 @@ $(document).ready(function() {
 								<p>Deactivate the Welcome package with<br />
 								<f:if condition="{isWindows}">
 									<f:then>
-										<code>flow.bat package:deactivate TYPO3.Welcome</code>
+										<code>flow.bat package:deactivate Neos.Welcome</code>
 									</f:then>
 									<f:else>
-										<code>./flow package:deactivate TYPO3.Welcome</code>
+										<code>./flow package:deactivate Neos.Welcome</code>
 									</f:else>
 								</f:if>
 								<p>Afterwards make sure to <strong>remove the &quot;Welcome&quot; SubRoute definition</strong> from the global routes in <em>Configuration/Routes.yaml</em>.</p>

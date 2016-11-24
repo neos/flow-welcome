@@ -1,6 +1,6 @@
-TYPO3:
+Neos:
   Flow:
     mvc:
       routes:
-        'TYPO3.Welcome':
+        'Neos.Welcome':
           position: 'start'

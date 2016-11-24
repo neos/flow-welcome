@@ -1,8 +1,8 @@
 <?php
-namespace TYPO3\Welcome\Controller;
+namespace Neos\Welcome\Controller;
 
 /*
- * This file is part of the TYPO3.Welcome package.
+ * This file is part of the Neos.Welcome package.
  *
  * (c) Contributors of the Neos Project - www.neos.io
  *
@@ -40,7 +40,7 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
 
         $this->view->assign('isWindows', DIRECTORY_SEPARATOR !== '/');
 
-        $flowPackage = $this->packageManager->getPackage('TYPO3.Flow');
+        $flowPackage = $this->packageManager->getPackage('Neos.Flow');
         $version = $flowPackage->getPackageMetaData()->getVersion();
         $this->view->assign('version', $version);
 

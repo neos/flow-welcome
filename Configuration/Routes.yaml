@@ -6,7 +6,7 @@
   name: 'Welcome screen'
   uriPattern: 'flow/welcome'
   defaults:
-    '@package':    'TYPO3.Welcome'
+    '@package':    'Neos.Welcome'
     '@controller': 'Standard'
     '@action':     'index'
     '@format':     'html'
@@ -15,7 +15,7 @@
   name: 'Redirect to welcome screen'
   uriPattern: ''
   defaults:
-    '@package':    'TYPO3.Welcome'
+    '@package':    'Neos.Welcome'
     '@controller': 'Standard'
     '@action':     'redirect'
     '@format':     'html'
