@@ -41,7 +41,7 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
         $this->view->assign('isWindows', DIRECTORY_SEPARATOR !== '/');
 
         $flowPackage = $this->packageManager->getPackage('Neos.Flow');
-        $version = $flowPackage->getPackageMetaData()->getVersion();
+        $version = $flowPackage->getInstalledVersion();
         $this->view->assign('version', $version);
 
         $activePackages = $this->packageManager->getActivePackages();
