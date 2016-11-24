@@ -10,5 +10,8 @@
         "psr-4": {
             "Neos\\Welcome\\": "Classes"
         }
+    },
+    "replace": {
+        "typo3/welcome": "self.version"
     }
 }
