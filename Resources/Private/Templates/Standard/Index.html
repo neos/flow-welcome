@@ -6,7 +6,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Welcome to Flow</title>
-<f:base />
 <link rel="stylesheet" type="text/css" href="../../../Public/Styles/Styles.css" />
 <script type="text/javascript" src="../../../Public/Libraries/jquery/jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
@@ -67,7 +66,7 @@ $(document).ready(function() {
 							</li>
 							<li>
 								<h3>Test your controller</h3>
-								<f:if condition="{isMyPackageActive}">
+								<f:if condition="{isPackageAvailable}">
 									<f:then>
 										<p>Click on <f:link.action action="index" package="MyCompany.MyPackage">this link</f:link.action> to trigger your new package</p>
 									</f:then>
@@ -108,13 +107,13 @@ $(document).ready(function() {
 						<li><a href="http://flowframework.readthedocs.io/" target="flow">Documentation</a></li>
 						<li><a href="https://www.neos.io/docs-and-support/api-documentation.html" target="flow">Flow API</a></li>
 						<li><a href="http://flowframework.readthedocs.io/en/latest/TheDefinitiveGuide/PartV/CodingGuideLines/" target="flow">Coding guidelines</a></li>
-						<li><a href="https://jira.neos.io/browse/FLOW" target="flow">Known issues</a></li>
+						<li><a href="https://github.com/neos/flow-development-collection/issues" target="flow">Known issues</a></li>
 					</ul>
 					<h3>Get involved</h3>
 					<ul>
 						<li><a href="https://discuss.neos.io/" target="flow">Start a thread in our forum</a></li>
 						<li><a href="http://slack.neos.io/" target="flow">Join us on Slack</a></li>
-						<li><a href="https://jira.neos.io/secure/CreateIssue!default.jspa" target="flow">Report a bug</a></li>
+						<li><a href="https://github.com/neos/flow-development-collection/issues/new" target="flow">Report a bug</a></li>
 					</ul>
 				</div>
 			</div>
@@ -148,7 +147,7 @@ $(document).ready(function() {
 						<p>Many more contributions have been made by various members of the TYPO3 and PHP community - thanks to all of you!</p>
 						<h3>Installed Packages</h3>
 						<ul class="packages">
-						<f:for each="{activePackages}" as="package">
+						<f:for each="{availablePackages}" as="package">
 							<li class="package">
 								<h4><span class="package-key">{package.packageKey}</span> <small><span class="package-version">{package.packageMetaData.version}</span></small></h4>
 								<p>{package.packageMetaData.description}</p>
