@@ -82,7 +82,7 @@ $(document).ready(function() {
 							</li>
 							<li>
 								<h3>Remove the Welcome package (optional)</h3>
-								<p>Remove the Welcome package by deleting the "Neos.Welcome" folder inside `Packages\Framework\` and then run<br />
+								<p>Remove the Welcome package via composer <code>composer remove neos/welcome</code> and then run<br />
 								<f:if condition="{isWindows}">
 									<f:then>
 										<code>flow.bat package:rescan</code>
