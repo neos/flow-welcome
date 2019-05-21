@@ -19,7 +19,7 @@ use Neos\Flow\Annotations as Flow;
 class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
 {
     /**
-     * @var \Neos\Flow\Package\PackageManagerInterface
+     * @var \Neos\Flow\Package\PackageManager
      * @Flow\Inject
      */
     protected $packageManager;
