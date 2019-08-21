@@ -12,6 +12,7 @@ namespace Neos\Welcome\Controller;
  */
 
 use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Http\ServerRequestAttributes;
 
 /**
  * Controller with a welcome start screen for Flow
@@ -35,8 +36,8 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
         $this->view->assign('flowPathWeb', realpath(FLOW_PATH_WEB));
         $this->view->assign('isPackageAvailable', $this->packageManager->isPackageAvailable('MyCompany.MyPackage'));
 
-        $baseUri = $this->request->getHttpRequest()->getBaseUri();
-        $this->view->assign('baseUri', $baseUri);
+        $baseUri = $this->request->getHttpRequest()->getAttribute(ServerRequestAttributes::BASE_URI);
+        $this->view->assign('baseUri', (string)$baseUri);
 
         $this->view->assign('isWindows', DIRECTORY_SEPARATOR !== '/');
 
