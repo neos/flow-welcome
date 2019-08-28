@@ -12,6 +12,7 @@ namespace Neos\Welcome\Controller;
  */
 
 use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Package\PackageManager;
 
 /**
  * Controller with a welcome start screen for Flow
@@ -19,8 +20,8 @@ use Neos\Flow\Annotations as Flow;
 class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
 {
     /**
-     * @var \Neos\Flow\Package\PackageManagerInterface
      * @Flow\Inject
+     * @var PackageManager
      */
     protected $packageManager;
 
@@ -35,7 +36,7 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
         $this->view->assign('flowPathWeb', realpath(FLOW_PATH_WEB));
         $this->view->assign('isPackageAvailable', $this->packageManager->isPackageAvailable('MyCompany.MyPackage'));
 
-        $baseUri = $this->request->getHttpRequest()->getBaseUri();
+        $baseUri = $this->request->getHttpRequest()->getUri()->withPath('/')->withQuery('')->withFragment('');
         $this->view->assign('baseUri', $baseUri);
 
         $this->view->assign('isWindows', DIRECTORY_SEPARATOR !== '/');
