@@ -37,7 +37,7 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
         $this->view->assign('isPackageAvailable', $this->packageManager->isPackageAvailable('MyCompany.MyPackage'));
 
         $baseUri = (string)RequestInformationHelper::generateBaseUri($this->request->getHttpRequest());
-        $this->view->assign('baseUri', (string)$baseUri);
+        $this->view->assign('baseUri', $baseUri);
 
         $this->view->assign('isWindows', DIRECTORY_SEPARATOR !== '/');
 
