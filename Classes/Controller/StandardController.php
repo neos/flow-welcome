@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace Neos\Welcome\Controller;
 
 /*
@@ -12,15 +14,19 @@ namespace Neos\Welcome\Controller;
  */
 
 use Neos\Flow\Annotations as Flow;
-use Neos\Flow\Http\ServerRequestAttributes;
+use Neos\Flow\Http\Helper;
+use Neos\Flow\Mvc\Controller\ActionController;
+use Neos\Flow\Mvc\Exception\StopActionException;
+use Neos\Flow\Package\Exception\UnknownPackageException;
+use Neos\Flow\Package\PackageManager;
 
 /**
  * Controller with a welcome start screen for Flow
  */
-class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
+class StandardController extends ActionController
 {
     /**
-     * @var \Neos\Flow\Package\PackageManager
+     * @var PackageManager
      * @Flow\Inject
      */
     protected $packageManager;
@@ -29,15 +35,16 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
      * Index action
      *
      * @return void
+     * @throws UnknownPackageException
      */
-    public function indexAction()
+    public function indexAction(): void
     {
         $this->view->assign('flowPathRoot', realpath(FLOW_PATH_ROOT));
         $this->view->assign('flowPathWeb', realpath(FLOW_PATH_WEB));
         $this->view->assign('isPackageAvailable', $this->packageManager->isPackageAvailable('MyCompany.MyPackage'));
 
-        $baseUri = $this->request->getHttpRequest()->getAttribute(ServerRequestAttributes::BASE_URI);
-        $this->view->assign('baseUri', (string)$baseUri);
+        $baseUri = (string)Helper\RequestInformationHelper::generateBaseUri($this->request->getHttpRequest());
+        $this->view->assign('baseUri', $baseUri);
 
         $this->view->assign('isWindows', DIRECTORY_SEPARATOR !== '/');
 
@@ -53,8 +60,9 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
 
     /**
      * @return void
+     * @throws StopActionException
      */
-    public function redirectAction()
+    public function redirectAction(): void
     {
         $this->redirect('index');
     }
