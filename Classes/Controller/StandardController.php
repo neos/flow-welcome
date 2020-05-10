@@ -41,19 +41,13 @@ class StandardController extends ActionController
     {
         $this->view->assign('flowPathRoot', realpath(FLOW_PATH_ROOT));
         $this->view->assign('flowPathWeb', realpath(FLOW_PATH_WEB));
-        $this->view->assign('isPackageAvailable', $this->packageManager->isPackageAvailable('MyCompany.MyPackage'));
-
-        $baseUri = (string)Helper\RequestInformationHelper::generateBaseUri($this->request->getHttpRequest());
-        $this->view->assign('baseUri', $baseUri);
+        $this->view->assign('isPackageAvailable', $this->packageManager->isPackageAvailable('Happy.Coding'));
 
         $this->view->assign('isWindows', DIRECTORY_SEPARATOR !== '/');
 
         $flowPackage = $this->packageManager->getPackage('Neos.Flow');
         $version = $flowPackage->getInstalledVersion();
         $this->view->assign('version', $version);
-
-        $availablePackages = $this->packageManager->getAvailablePackages();
-        $this->view->assign('availablePackages', $availablePackages);
 
         $this->view->assign('notDevelopmentContext', !$this->objectManager->getContext()->isDevelopment());
     }

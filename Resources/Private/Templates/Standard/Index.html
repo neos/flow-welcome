@@ -1,165 +1,96 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Welcome to Flow</title>
-<link rel="stylesheet" type="text/css" href="../../../Public/Styles/Styles.css" />
-<script type="text/javascript" src="../../../Public/Libraries/jquery/jquery-1.9.1.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-	$('.tab').each(function(index, element) {
-		$(element).addClass(index == 0 ? 'tab-active' : 'tab-inactive');
-		$(element).find('h2').first().click(function() {
-			$('.tab').removeClass('tab-active').addClass('tab-inactive');
-			$(element).addClass('tab-active').removeClass('tab-inactive');
-		});
-	});
-});
-</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;300&display=swap" rel="stylesheet">
+    <link href="{f:uri.resource(path: 'Styles/Styles.css')}" rel="stylesheet" />
+    <title>Welcome to Flow</title>
 </head>
 <body>
 
-<div id="application-bar">
-<div class="logo">Flow</div> <h1 class="title">Welcome</h1>
-<div class="version">{version}</div>
-</div>
-
-<div id="messages">
 <f:if condition="{notDevelopmentContext}">
-	<div class="notice">
-		<h2>Switch to Development context</h2>
-		<p>You should enable the Development context for your first steps into the world of Flow!<br />
-		Check the <a href="http://flowframework.readthedocs.io/en/latest/TheDefinitiveGuide/" target="flow">Flow reference</a> and/or
-		the <a href="http://flowframework.readthedocs.io/en/latest/Quickstart/" target="flow">Quickstart tutorial</a> for instructions.</p>
-	</div>
+    <div class="notice">
+        <h2>Switch to Development context</h2>
+        <p>You should enable the Development context for your first steps into the world of Flow!<br />
+            Check the <a href="http://flowframework.readthedocs.io/en/latest/TheDefinitiveGuide/">Flow reference</a> and/or
+            the <a href="http://flowframework.readthedocs.io/en/latest/Quickstart/">Quickstart tutorial</a> for instructions.</p>
+    </div>
 </f:if>
-</div>
 
-<div id="window">
-	<div class="tabs">
-		<div class="tab">
-			<h2 class="title title-getting-started">Getting started</h2>
-			<div class="content">
-				<div class="main">
-					<div class="spacer">
-						<p>Here's how to get into the flow:</p>
-						<ol class="steps">
-							<li>
-								<h3>Kickstart your first package</h3>
-								<f:if condition="{isWindows}">
-									<f:then>
-										<p>Go to <code>{flowPathRoot}</code><br />and run the following lines of code:<br />
-											<code>set FLOW_CONTEXT=Development</code><br />
-											<code>set FLOW_ROOTPATH={flowPathRoot}</code><br />
-											<code>set FLOW_WEBPATH={flowPathWeb}</code><br />
-											<code>flow.bat kickstart:package MyCompany.MyPackage</code><br />
-											to create a package with a standard controller</p>
-									</f:then>
-									<f:else>
-										<p>Go to <code>{flowPathRoot}</code><br />and run<br /><code>./flow kickstart:package MyCompany.MyPackage</code><br />
-											to create a package with a standard controller</p>
-									</f:else>
-								</f:if>
-							</li>
-							<li>
-								<h3>Test your controller</h3>
-								<f:if condition="{isPackageAvailable}">
-									<f:then>
-										<p>Click on <f:link.action action="index" package="MyCompany.MyPackage">this link</f:link.action> to trigger your new package</p>
-									</f:then>
-									<f:else>
-										<p><em>"MyCompany.MyPackage" has either not yet been created or not activated. Follow step 1 and <a href="javascript:window.location.reload()">reload</a> this page.</em></p>
-										<p><em>If you named your package "SomethingElse" visit {baseUri}SomethingElse/</em></p>
-									</f:else>
-								</f:if>
-							</li>
-							<li>
-								<h3>Read the tutorial</h3>
-								<p>Switch over to the <a href="http://flowframework.readthedocs.io/en/latest/Quickstart/" target="flow">Quickstart Tutorial</a> to get the a first overview.</p>
-							</li>
-							<li>
-								<h3>Deactivate the Welcome package (optional)</h3>
-								<p>Deactivate the Welcome package with<br />
-								<f:if condition="{isWindows}">
-									<f:then>
-										<code>flow.bat package:deactivate Neos.Welcome</code>
-									</f:then>
-									<f:else>
-										<code>./flow package:deactivate Neos.Welcome</code>
-									</f:else>
-								</f:if>
-								<p>Afterwards make sure to <strong>remove the &quot;Welcome&quot; SubRoute definition</strong> from the global routes in <em>Configuration/Routes.yaml</em>.</p>
-							</li>
-						</ol>
-					</div>
-				</div>
-				<h2 class="invisible">More information</h2>
-				<div class="sidebar">
-					<h3>Join the community</h3>
-					<ul>
-						<li><a href="https://www.neos.io/contribute.html" target="flow">Contribute to Flow and Neos</a></li>
-					</ul>
-					<h3>Read the documentation</h3>
-					<ul>
-						<li><a href="http://flowframework.readthedocs.io/" target="flow">Documentation</a></li>
-						<li><a href="https://www.neos.io/docs-and-support/api-documentation.html" target="flow">Flow API</a></li>
-						<li><a href="http://flowframework.readthedocs.io/en/latest/TheDefinitiveGuide/PartV/CodingGuideLines/" target="flow">Coding guidelines</a></li>
-						<li><a href="https://github.com/neos/flow-development-collection/issues" target="flow">Known issues</a></li>
-					</ul>
-					<h3>Get involved</h3>
-					<ul>
-						<li><a href="https://discuss.neos.io/" target="flow">Start a thread in our forum</a></li>
-						<li><a href="http://slack.neos.io/" target="flow">Join us on Slack</a></li>
-						<li><a href="https://github.com/neos/flow-development-collection/issues/new" target="flow">Report a bug</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="tab">
-			<h2 class="title title-about">About</h2>
-			<div class="content">
-				<div class="main">
-					<div class="spacer">
-						<h3 class="first">About Flow</h3>
-						<p>Flow is an offspring from the development of <a href="https://www.neos.io">Neos</a> and
-						can be used independently as an application framework. It is licensed under the terms of the MIT
-						license.</p>
-						<h3>Credits</h3>
-						<p>Many people have contributed to Flow with ideas, design, testing, money, code and espresso. A big thank you goes to the
-						community and the members of the TYPO3 Association who made the development of Flow possible in the first years.</p>
-						<p>The main part of Flow was designed and developed by Robert Lemke. The persistence integration was developed and major
-						contributions to Flow were made by Karsten Dambekalns. Andreas Förthner designed and developed the Security Framework while
-						Bastian Waidelich created the initial implementation of Flow's routing mechanism. Sebastian Kurfürst and Bastian Waidelich
-						designed and implemented the Fluid templating engine.</p>
-						<p>Further code contributions were made by the Neos team and others: Adrian Föder, Alexander Stehlik, Andreas Wolf, Aske Ertmann,
-						Bernhard Fischer, Christian Jul Jensen, Christian Kuhn, Christian Müller, Christopher Hlubek, Daniel Brün, Felix Oertel, Ferdinand Kuhl,
-						Irene Höppner, Jochen Rau, Johannes Künsebeck, Julian Kleinhans, Julian Wachholz, Karol Gusak, Lars Peipmann, Lienhart Woitok, Marco Huber,
-						Martin Brüggemann, Martin Ficzel, Michael Klapper, Michael Sauter, Nils Jeisecke, Oliver Hader, Rens Admiraal, Sascha Egerer,
-						Stefan Neufeind, Stephan Schuler, Thomas Hempel, Thomas Layh, Tim Eilers, Tobias Liebig, Tolleiv Nietsch and Zach Davis.</p>
-						<p>The initial design of the AOP framework and the IoC container were inspired by the viFramework developed by Florian Grandel who
-						also pointed Robert to the Spring Framework which was a great source for inspiration. Further frameworks and projects which influenced
-						the design of Flow are AspectJ, NanoContainer, Ruby on Rails, Symfony, QT and surely more.</p>
-						<p>The overall design and concepts would be way less mature and elegant if experts like Martin Fowler, Eric Evans, Jimmy Nilsson,
-						Kent Beck or Paul Duvall wouldn't have shared their insights in books and talks.</p>
-						<p>Many more contributions have been made by various members of the TYPO3 and PHP community - thanks to all of you!</p>
-						<h3>Installed Packages</h3>
-						<ul class="packages">
-						<f:for each="{availablePackages}" as="package">
-							<li class="package">
-								<h4><span class="package-key">{package.packageKey}</span> <small><span class="package-version">{package.packageMetaData.version}</span></small></h4>
-								<p>{package.packageMetaData.description}</p>
-							</li>
-						</f:for>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+<main>
+    <section id="version">
+        <h1>
+            Welcome to <span>Neos Flow {version}</span>
+        </h1>
+    </section>
+    <section id="welcome">
+        <f:if condition="{notDevelopmentContext}">
+            <div class="notice">
+                <h2>Switch to Development context</h2>
+                <p>You should enable the Development context for your first steps into the world of Flow!<br />
+                    Check the <a href="http://flowframework.readthedocs.io/en/latest/TheDefinitiveGuide/" target="flow">Flow reference</a> and/or
+                    the <a href="http://flowframework.readthedocs.io/en/latest/Quickstart/" target="flow">Quickstart tutorial</a> for instructions.</p>
+            </div>
+        </f:if>
+        <h2>Getting started &#128075;</h2>
+        <p>
+            Open a terminal and create your first package with
+            <code>
+                cd {flowPathRoot}<br />
+                ./flow kickstart:package Happy.Coding
+            </code>
+            to create a package with a boilerplate controller.
+        </p>
+        <f:if condition="{isPackageAvailable}">
+            <f:then>
+                <p>Click on <f:link.action action="index" package="Happy.Coding">this link</f:link.action> to see your new package in action</p>
+            </f:then>
+            <f:else>
+                <p>Once you've created the "Happy.Coding" package - <a href="javascript:window.location.reload()"> refresh this page</a> to find the next step</p>
+            </f:else>
+        </f:if>
+
+        <h2>Keep Flowing</h2>
+        <ul>
+            <li>
+                <a href="https://flowframework.readthedocs.io/en/stable/Quickstart/index.html">Docs: Flow Quickstart</a>
+            </li>
+            <li>
+                <a href="https://flowframework.readthedocs.io/en/stable/TheDefinitiveGuide/#">Docs: The Definitive Guide</a>
+            </li>
+            <li>
+                <a href="https://www.neos.io/contribute.html" target="flow">Contribute to Flow and Neos</a>
+            </li>
+            <li>
+                <a href="https://discuss.neos.io/">Start a thread in our forum</a>
+            </li>
+            <li>
+                <a href="http://slack.neos.io/">Join us on Slack</a>
+            </li>
+            <li>
+                <a href="https://github.com/neos/flow-development-collection/issues/new">Report a bug</a>
+            </li>
+            <li>
+                <a href="https://github.com/neos/flow-development-collection/">Github</a>
+            </li>
+
+        </ul>
+
+        <h2>Deactivate the Welcome package (optional)</h2>
+        <p>Deactivate the Welcome package with<br />
+        <f:if condition="{isWindows}">
+            <f:then>
+                <code>flow.bat package:deactivate Neos.Welcome</code>
+            </f:then>
+            <f:else>
+                <code>./flow package:deactivate Neos.Welcome</code>
+            </f:else>
+        </f:if>
+        <p>in order to deactivate this welcome page </p>
+    </section>
+</main>
+
 
 </body>
 </html>
