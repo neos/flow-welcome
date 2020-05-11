@@ -78,16 +78,9 @@
         </ul>
 
         <h2>Deactivate the Welcome package (optional)</h2>
-        <p>Deactivate the Welcome package with<br />
-        <f:if condition="{isWindows}">
-            <f:then>
-                <code>flow.bat package:deactivate Neos.Welcome</code>
-            </f:then>
-            <f:else>
-                <code>./flow package:deactivate Neos.Welcome</code>
-            </f:else>
-        </f:if>
-        <p>in order to deactivate this welcome page </p>
+        <p>Deactivate the Welcome package with
+            <code>composer remove neos/welcome</code>
+        in order to deactivate this welcome page </p>
     </section>
 </main>
 
