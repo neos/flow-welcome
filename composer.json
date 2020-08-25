@@ -4,7 +4,7 @@
     "description": "This package provides a start screen for the Flow framework with links to online resources.",
     "license": "MIT",
     "require": {
-        "neos/flow": "~5.0 || dev-master"
+        "neos/flow": "~6.3.0 || dev-master"
     },
     "autoload": {
         "psr-4": {
