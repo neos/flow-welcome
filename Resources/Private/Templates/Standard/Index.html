@@ -81,14 +81,14 @@ $(document).ready(function() {
 								<p>Switch over to the <a href="http://flowframework.readthedocs.io/en/latest/Quickstart/" target="flow">Quickstart Tutorial</a> to get the a first overview.</p>
 							</li>
 							<li>
-								<h3>Deactivate the Welcome package (optional)</h3>
-								<p>Deactivate the Welcome package with<br />
+								<h3>Remove the Welcome package (optional)</h3>
+								<p>Remove the Welcome package via composer <code>composer remove neos/welcome</code> and then run<br />
 								<f:if condition="{isWindows}">
 									<f:then>
-										<code>flow.bat package:deactivate Neos.Welcome</code>
+										<code>flow.bat package:rescan</code>
 									</f:then>
 									<f:else>
-										<code>./flow package:deactivate Neos.Welcome</code>
+										<code>./flow package:rescan</code>
 									</f:else>
 								</f:if>
 								<p>Afterwards make sure to <strong>remove the &quot;Welcome&quot; SubRoute definition</strong> from the global routes in <em>Configuration/Routes.yaml</em>.</p>
