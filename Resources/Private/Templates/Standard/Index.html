@@ -80,10 +80,10 @@
         <p>Remove the Welcome package via composer <code>composer remove neos/welcome</code> and then run
             <f:if condition="{isWindows}">
                 <f:then>
-                    <code>flow.bat package:rescan</code>
+                    <code>flow.bat flow:package:rescan</code>
                 </f:then>
                 <f:else>
-                    <code>./flow package:rescan</code>
+                    <code>./flow flow:package:rescan</code>
                 </f:else>
             </f:if>
         </p>
